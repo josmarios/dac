@@ -104,6 +104,11 @@ public class PageScraper {
 		return profile;
 	}
 
+	/**
+	 * Opens the fileUrl file, processes the authors and returns a List<String> 
+	 * @param fileUrl
+	 * @return authors 
+	 */
 	public List<String> loadData(String fileUrl) {
 		List<String> authors = new ArrayList<String>();
 		File file = new File(fileUrl);
@@ -120,7 +125,12 @@ public class PageScraper {
 		}
 		return authors;
 	}
-
+	
+	/**
+	 * Extracts author information from ResearchGate 
+	 * @param profileUrl
+	 * @return
+	 */
 	public Author extractAuthorInfo(String profileUrl) {
 
 		Author author = new Author();
@@ -229,6 +239,12 @@ public class PageScraper {
 		return publications;
 	}
 
+	/**
+	 * Processes and saves author data on the queryList to the output directory using the search engine provided
+	 * @param searchEngine
+	 * @param queryList
+	 * @param output
+	 */
 	public void processData(String searchEngine, String queryList, String output) {
 
 		List<String> queryItems = loadData(queryList);
