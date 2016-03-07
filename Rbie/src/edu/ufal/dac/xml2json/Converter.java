@@ -76,7 +76,7 @@ public class Converter {
 			FileWriter fw = new FileWriter(jsonMaster);
 
 			fw.write("{\"papers\":[");
-			
+
 			for (File file : inDir.listFiles()) {
 				fw.write(convert(loadFile(file)) + ",");
 			}
