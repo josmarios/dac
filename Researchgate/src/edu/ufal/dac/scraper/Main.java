@@ -5,10 +5,12 @@ public class Main {
 	private static final String SEARCH_ENGINE = "http://search.yahoo.com/search?p=";
 
 	// File containing a list of authors from RBIE
-	private static final String INPUT_FILE = "/home/josmario/AUTHORS_RBIE.in";
+	//private static final String INPUT_FILE = "/home/josmario/AUTHORS_RBIE.in";
+	private static final String INPUT_FILE = "data/AUTHORS_RBIE.in";
 
 	// JSON file to place extracted data from Researchgate
-	private static final String OUTPUT_DIR = "/home/josmario/RESEARCHGATE_AUTHORS/";
+	//private static final String OUTPUT_DIR = "/home/josmario/RESEARCHGATE_AUTHORS/";
+	private static final String OUTPUT_DIR = "data/RESEARCHGATE_AUTHORS/";
 
 	public static void main(String[] args) {
 
