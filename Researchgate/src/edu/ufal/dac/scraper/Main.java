@@ -13,9 +13,9 @@ public class Main {
 	private static final String OUTPUT_DIR = "data/RESEARCHGATE_AUTHORS/";
 
 	public static void main(String[] args) {
-
+		
 		PageScraper ps = new PageScraper();
-
+		
 		ps.processData(SEARCH_ENGINE, INPUT_FILE, OUTPUT_DIR);
 	}
 }

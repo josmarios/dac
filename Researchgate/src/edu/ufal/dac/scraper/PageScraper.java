@@ -211,8 +211,14 @@ public class PageScraper {
 							docDetails.select("div.js-expander-container").first().select("div").first().text());
 
 					// Publisher
-
-					//currentArticle.setPublisher(docDetails.select("div.publication-meta").toString());
+					String publisher = docDetails.select("meta[name=citation_journal_title]").attr("content");
+					if (publisher == "") {
+						publisher = docDetails.select("div[class=pub-details js-pub-details]").first().toString();
+						//TODO:
+						// 1) Fix formatting
+						// 2) Test additional possible tags
+					}
+					currentArticle.setPublisher(publisher);
 
 					// publication date
 					//currentArticle.setPublicationDate(docDetails.select("div.publication-meta-date").toString());
