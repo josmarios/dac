@@ -78,7 +78,8 @@ public class Author {
 
 	@Override
 	public String toString() {
-		return this.name;
+		return this.name + "\n" + this.affiliation + "\nPublications: " + this.numPublications
+				+ "\nCitations: " + this.numCitations + "\nReads: " + this.numProfileViews + "\n*\n";
 	}
 
 }

@@ -16,6 +16,7 @@ public class Article {
 
 	public void setUrl(String url) {
 		this.url = url;
+		System.out.println("Article URL: " + this.url);
 	}
 
 	public String getTitle() {
@@ -24,6 +25,7 @@ public class Article {
 
 	public void setTitle(String title) {
 		this.title = title;
+		System.out.println("Article Title: " + this.title);
 	}
 
 	public List<String> getAuthors() {
@@ -32,6 +34,8 @@ public class Article {
 
 	public void setAuthors(List<String> authors) {
 		this.authors = authors;
+		System.out.println("Article Authors: " + this.authors);
+
 	}
 
 	public String getAbst() {
@@ -40,6 +44,8 @@ public class Article {
 
 	public void setAbst(String abst) {
 		this.abst = abst;
+		System.out.println("Article Abstract: " + this.abst);
+
 	}
 
 	public String getPublicationDate() {
@@ -48,6 +54,8 @@ public class Article {
 
 	public void setPublicationDate(String publicationDate) {
 		this.publicationDate = publicationDate;
+		System.out.println("Article publication date: " + this.publicationDate);
+
 	}
 
 	public String getPublisher() {
@@ -56,6 +64,8 @@ public class Article {
 
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
+		System.out.println("Article publisher: " + this.publisher);
+
 	}
 
 }

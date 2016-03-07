@@ -166,9 +166,7 @@ public class PageScraper {
 
 		// articles
 		author.setArticles(extractPublications(profileUrl, Integer.parseInt(author.getNumPublications())));
-		System.out.println(
-				author.getName() + "\n" + author.getAffiliation() + "\nPublications: " + author.getNumPublications()
-						+ "\nCitations: " + author.getNumCitations() + "\nReads: " + author.getNumProfileViews());
+		//System.out.println(author.getName() + "\n" + author.getAffiliation() + "\nPublications: " + author.getNumPublications() + "\nCitations: " + author.getNumCitations() + "\nReads: " + author.getNumProfileViews());
 
 		return author;
 	}
@@ -177,14 +175,12 @@ public class PageScraper {
 
 		int numPages = ((numPublications % 20) == 0) ? numPublications / 20 : (numPublications / 20 + 1);
 		Document doc;
-		Article currentArticle = new Article();
 		List<Article> publications = new ArrayList<>();
-		List<String> coAuthors = new ArrayList<>();
 
 		String baseUrl = "https://www.researchgate.net/";
 
 		for (int i = 0; i < numPages; i++) {
-
+			
 			// get publications' current page (publications shown on each page)
 
 			String currentPage = getPageContent(profileUrl + "/publications/" + (i + 1));
@@ -192,6 +188,8 @@ public class PageScraper {
 			doc = Jsoup.parse(currentPage);
 
 			for (Element element : doc.select("li.li-publication")) {
+				Article currentArticle = new Article();
+				List<String> coAuthors = new ArrayList<>();
 
 				try {
 					// temporary title (just in case of error it will be used)
@@ -214,15 +212,15 @@ public class PageScraper {
 
 					// Publisher
 
-					currentArticle.setPublisher(docDetails.select("div.publication-meta").toString());
+					//currentArticle.setPublisher(docDetails.select("div.publication-meta").toString());
 
 					// publication date
-					currentArticle.setPublicationDate(docDetails.select("div.publication-meta-date").toString());
+					//currentArticle.setPublicationDate(docDetails.select("div.publication-meta-date").toString());
 
 					// co-authors
-					for (Element elem : docDetails.select("a.publication-author-name")) {
-						System.out.println("AQUII: " + elem);
-						String coAuthor = elem.text();
+					//for (Element elem : docDetails.select("a.publication-author-name")) {
+					for (Element elem : docDetails.select("meta[name=citation_author]")) {
+						String coAuthor = elem.attr("content");
 						coAuthors.add(coAuthor);
 					}
 					currentArticle.setAuthors(coAuthors);
@@ -259,7 +257,8 @@ public class PageScraper {
 
 				FileWriter fw = new FileWriter(new File(output + i + "-author"));
 				author = extractAuthorInfo(this.getProfileUrl(this.searchProfile(searchEngine, queryItems.get(i))));
-				fw.write(new JSONObject(author).toString());
+			//	fw.write(new JSONObject(author).toString()); // error: Unsupported major.minor version 52.0
+				fw.write(author.toString());
 				fw.close();
 
 			} catch (Exception e) {
