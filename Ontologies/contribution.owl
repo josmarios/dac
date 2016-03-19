@@ -1,344 +1,630 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.ic.ufal.br/dac/contribution"
+     xml:base="http://www.semanticweb.org/josmario/ontologies/2016/2/untitled-ontology-12"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.ic.ufal.br/dac/contribution"
-     versionIRI="http://www.ic.ufal.br/dac/contribution/1.0.0">
-    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+     ontologyIRI="http://www.semanticweb.org/josmario/ontologies/2016/2/untitled-ontology-12">
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>http://ebiquity.umbc.edu/ontology/publication.owl#publication</Import>
     <Declaration>
-        <DataProperty IRI="#abstract"/>
+        <Class IRI="#Presentation"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#numQuestions"/>
+        <ObjectProperty IRI="#hasSource"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#duration"/>
+        <Class IRI="#Project"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Contribution"/>
+        <Class IRI="#Article"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#advisorName"/>
+        <Class IRI="#Academic_Journal"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#citations"/>
+        <ObjectProperty IRI="#isAttachedTo"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Ig_Ibert_Bittencourt"/>
+        <ObjectProperty IRI="#hasKeyword"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#topic"/>
+        <Class IRI="#Interview"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#GraduationThesis"/>
+        <ObjectProperty IRI="#grantsRightTo"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Thesis"/>
+        <Class IRI="#Book"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#isbn"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Estado_da_Arte_sobre_Afetividade_na_Formação_de_Grupos_em_Ambientes_Colaborativos_de_Aprendizagem"/>
+        <DataProperty IRI="#contributionTitle"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#numPages"/>
+        <DataProperty IRI="#volumeNumber"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Advisor"/>
+        <DataProperty IRI="#contributionDescription"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasAuthor"/>
+        <ObjectProperty IRI="#describesArticle"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#reportDate"/>
+        <DataProperty IRI="#bookVolume"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Editor"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#keyword"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Keynote"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#publicationDate"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#description"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Draft"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#authorName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#version"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Publisher"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Presentation"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#title"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Interview"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasCoAuthor"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasEditor"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isPublishedOn"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/person.owl#Author"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#MastersThesis"/>
         <Class IRI="#Thesis"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#Publication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MasterThesis"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#impactFactor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#sourceUri"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Contribution"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#TechReport"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#Publication"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Draft"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#Publication"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GraduationThesis"/>
-        <Class IRI="#Thesis"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Interview"/>
-        <Class IRI="#Presentation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Keynote"/>
-        <Class IRI="#Presentation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Presentation"/>
-        <Class IRI="#Contribution"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Thesis"/>
-        <Class IRI="#Contribution"/>
-    </SubClassOf>
-    <ClassAssertion>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#Article"/>
-        <NamedIndividual IRI="#Estado_da_Arte_sobre_Afetividade_na_Formação_de_Grupos_em_Ambientes_Colaborativos_de_Aprendizagem"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/person.owl#Author"/>
-        <NamedIndividual IRI="#Ig_Ibert_Bittencourt"/>
-    </ClassAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasAuthor"/>
-        <NamedIndividual IRI="#Estado_da_Arte_sobre_Afetividade_na_Formação_de_Grupos_em_Ambientes_Colaborativos_de_Aprendizagem"/>
-        <NamedIndividual IRI="#Ig_Ibert_Bittencourt"/>
-    </ObjectPropertyAssertion>
-    <DataPropertyAssertion>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#abstract"/>
-        <NamedIndividual IRI="#Estado_da_Arte_sobre_Afetividade_na_Formação_de_Grupos_em_Ambientes_Colaborativos_de_Aprendizagem"/>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">One of the great challenges for Computer Supported Collaborative Learning (CSCL) research area is the creation of learning groups, ensuring the synergy among their members, so that the educational benefits are fully achieved. In order to promote this synergy, researchers on Affec-tive Computing discuss the importance of considering the affective states (emotion, mood and personality trait) in the creation of learning groups. However, there are few papers that study, classify and analyze the results obtained by the scientific community showing the real impacts of affective states in learning group. This paper presents the development of a systematic map-ping that investigates which and how affective states are considered in the learning group formation. In particular we intend to answer the research questions: (i) What are the affective states used in group formation in CSCL environment? (ii) Which techniques are used in group formation to (affective states) recognition, modeling and expression? (iii) Which pedagogical strategies are used to support the group formation with affective states in CSCL environment? (iv) What are the empirical results obtained using affective states in group formation? To con-duct this research nine digital databases were consulted. From 1081 analyzed papers, only 21 of them were selected with relevant information to help answer the research questions defined. As a major results, we highlight that: (i)76,19% of the studies considered the personality trait in CSCL environment group formation; (ii) most papers used affective state recognition in CSCL environment by questionnaires fill out by students; (iii)it was confirmed the lack of stud-ies which use pedagogical theories or strategies; and (iv) although 8 studies have been empiri-cally evaluated, it was observed that the obtained results by scientific community about affect in group formation in CSCL environments are still incipient, with several gaps and further research opportunities.</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#keyword"/>
-        <NamedIndividual IRI="#Estado_da_Arte_sobre_Afetividade_na_Formação_de_Grupos_em_Ambientes_Colaborativos_de_Aprendizagem"/>
-        <Literal xml:lang="pt" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">CSCL, computação afetiva, estados afetivos, formação de grupos</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#numPages"/>
-        <NamedIndividual IRI="#Estado_da_Arte_sobre_Afetividade_na_Formação_de_Grupos_em_Ambientes_Colaborativos_de_Aprendizagem"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">18</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#publicationDate"/>
-        <NamedIndividual IRI="#Estado_da_Arte_sobre_Afetividade_na_Formação_de_Grupos_em_Ambientes_Colaborativos_de_Aprendizagem"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#title"/>
-        <NamedIndividual IRI="#Estado_da_Arte_sobre_Afetividade_na_Formação_de_Grupos_em_Ambientes_Colaborativos_de_Aprendizagem"/>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Estado da Arte sobre Afetividade na Formação de Grupos em Ambientes Colaborativos de Aprendizagem</Literal>
-    </DataPropertyAssertion>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasAuthor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Keyword"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#copyrightDescription"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#locatesContribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Source"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#versionNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Publication"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCopyright"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#citationsNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#presentationDuration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Book_Chapter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Copyright"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conference_Paper"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#questionsNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#pagesNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Working_Paper"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#contributionDate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Review_Article"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Keynote"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhdThesis"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#kewordText"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Technical_Report"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasChapter"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#sourceName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#chapterNumber"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Academic_Journal"/>
+        <Class IRI="#Article"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Article"/>
+        <Class IRI="#Publication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Book"/>
+        <Class IRI="#Publication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Book_Chapter"/>
+        <Class IRI="#Publication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conference_Paper"/>
+        <Class IRI="#Article"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Interview"/>
+        <Class IRI="#Presentation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Keynote"/>
+        <Class IRI="#Presentation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MasterThesis"/>
+        <Class IRI="#Thesis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhdThesis"/>
+        <Class IRI="#Thesis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Presentation"/>
         <Class IRI="#Contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Project"/>
+        <Class IRI="#Publication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Publication"/>
+        <Class IRI="#Contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Review_Article"/>
+        <Class IRI="#Article"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Technical_Report"/>
+        <Class IRI="#Publication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Thesis"/>
+        <Class IRI="#Publication"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Working_Paper"/>
+        <Class IRI="#Article"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Academic_Journal"/>
+        <Class IRI="#Conference_Paper"/>
+        <Class IRI="#Review_Article"/>
+        <Class IRI="#Working_Paper"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Article"/>
+        <Class IRI="#Book"/>
+        <Class IRI="#Book_Chapter"/>
+        <Class IRI="#Project"/>
+        <Class IRI="#Technical_Report"/>
+        <Class IRI="#Thesis"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Contribution"/>
+        <Class IRI="#Copyright"/>
+        <Class IRI="#Keyword"/>
+        <Class IRI="#Source"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Interview"/>
+        <Class IRI="#Keynote"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MasterThesis"/>
+        <Class IRI="#PhdThesis"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Presentation"/>
+        <Class IRI="#Publication"/>
+    </DisjointClasses>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#describesArticle"/>
+        <ObjectProperty IRI="#hasKeyword"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#grantsRightTo"/>
+        <ObjectProperty IRI="#hasCopyright"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasChapter"/>
+        <ObjectProperty IRI="#isAttachedTo"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSource"/>
+        <ObjectProperty IRI="#locatesContribution"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#describesArticle"/>
+        <Class IRI="#Keyword"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasCoAuthor"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#Publication"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasEditor"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#Book"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPublishedOn"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#Publication"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasAuthor"/>
+        <ObjectProperty IRI="#describesArticle"/>
         <ObjectMinCardinality cardinality="1">
-            <ObjectProperty IRI="#hasAuthor"/>
-            <Class IRI="http://ebiquity.umbc.edu/ontology/person.owl#Author"/>
+            <ObjectProperty IRI="#describesArticle"/>
+            <Class IRI="#Article"/>
         </ObjectMinCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#grantsRightTo"/>
+        <Class IRI="#Copyright"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#grantsRightTo"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#grantsRightTo"/>
+            <Class IRI="#Contribution"/>
+        </ObjectMinCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasChapter"/>
+        <Class IRI="#Book"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasChapter"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasChapter"/>
+            <Class IRI="#Book_Chapter"/>
+        </ObjectMinCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCopyright"/>
+        <Class IRI="#Contribution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCopyright"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasCopyright"/>
+            <Class IRI="#Copyright"/>
+        </ObjectMinCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasKeyword"/>
+        <Class IRI="#Article"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasKeyword"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasKeyword"/>
+            <Class IRI="#Keyword"/>
+        </ObjectMinCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSource"/>
+        <Class IRI="#Contribution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSource"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSource"/>
+            <Class IRI="#Source"/>
+        </ObjectMinCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAttachedTo"/>
+        <Class IRI="#Book_Chapter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAttachedTo"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#isAttachedTo"/>
+            <Class IRI="#Book"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#locatesContribution"/>
+        <Class IRI="#Source"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#locatesContribution"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSource"/>
+            <Class IRI="#Contribution"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#describesArticle"/>
+        <Class IRI="#Article"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasCoAuthor"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/person.owl#Author"/>
+        <ObjectProperty IRI="#grantsRightTo"/>
+        <Class IRI="#Contribution"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasEditor"/>
-        <Class IRI="#Editor"/>
+        <ObjectProperty IRI="#hasChapter"/>
+        <Class IRI="#Book_Chapter"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isPublishedOn"/>
-        <Class IRI="#Publisher"/>
+        <ObjectProperty IRI="#hasCopyright"/>
+        <Class IRI="#Copyright"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasKeyword"/>
+        <Class IRI="#Keyword"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSource"/>
+        <Class IRI="#Source"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAttachedTo"/>
+        <Class IRI="#Book"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#locatesContribution"/>
+        <Class IRI="#Contribution"/>
     </ObjectPropertyRange>
     <DataPropertyDomain>
         <DataProperty IRI="#abstract"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#Publication"/>
+        <Class IRI="#Article"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#advisorName"/>
-        <Class IRI="#Advisor"/>
+        <DataProperty IRI="#bookVolume"/>
+        <Class IRI="#Book"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#authorName"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/person.owl#Author"/>
+        <DataProperty IRI="#chapterNumber"/>
+        <Class IRI="#Book_Chapter"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#citations"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#Publication"/>
+        <DataProperty IRI="#citationsNumber"/>
+        <Class IRI="#Publication"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#description"/>
+        <DataProperty IRI="#contributionDate"/>
         <Class IRI="#Contribution"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#duration"/>
-        <Class IRI="#Presentation"/>
+        <DataProperty IRI="#contributionDescription"/>
+        <Class IRI="#Contribution"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#contributionTitle"/>
+        <Class IRI="#Contribution"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#copyrightDescription"/>
+        <Class IRI="#Copyright"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#impactFactor"/>
+        <Class IRI="#Academic_Journal"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#isbn"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#Book"/>
+        <Class IRI="#Book"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#keyword"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#Article"/>
+        <DataProperty IRI="#kewordText"/>
+        <Class IRI="#Keyword"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#numPages"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#Publication"/>
+        <DataProperty IRI="#pagesNumber"/>
+        <Class IRI="#Publication"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#numQuestions"/>
-        <Class IRI="#Interview"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#publicationDate"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#Publication"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#reportDate"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#TechReport"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#title"/>
-        <Class IRI="#Contribution"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#topic"/>
+        <DataProperty IRI="#presentationDuration"/>
         <Class IRI="#Presentation"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#version"/>
-        <Class IRI="http://ebiquity.umbc.edu/ontology/publication.owl#Book"/>
+        <DataProperty IRI="#questionsNumber"/>
+        <Class IRI="#Interview"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#sourceName"/>
+        <Class IRI="#Source"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#sourceUri"/>
+        <Class IRI="#Source"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#versionNumber"/>
+        <Class IRI="#Working_Paper"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#volumeNumber"/>
+        <Class IRI="#Book"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#abstract"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#advisorName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#authorName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#citations"/>
+        <DataProperty IRI="#bookVolume"/>
         <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#description"/>
+        <DataProperty IRI="#chapterNumber"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#citationsNumber"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#contributionDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#contributionDescription"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#duration"/>
+        <DataProperty IRI="#contributionTitle"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#copyrightDescription"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#impactFactor"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isbn"/>
         <Datatype abbreviatedIRI="xsd:long"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#isbn"/>
+        <DataProperty IRI="#kewordText"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#pagesNumber"/>
         <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#keyword"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
+        <DataProperty IRI="#presentationDuration"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#numPages"/>
+        <DataProperty IRI="#questionsNumber"/>
         <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#numQuestions"/>
+        <DataProperty IRI="#sourceName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#sourceUri"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#versionNumber"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#volumeNumber"/>
         <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#publicationDate"/>
-        <Datatype abbreviatedIRI="xsd:dateTime"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#reportDate"/>
-        <Datatype abbreviatedIRI="xsd:dateTime"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#title"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#topic"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#version"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Academic_Journal</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An academic or scholarly journal is a peer-reviewed or refereed periodical in which scholarship relating to a particular academic discipline is published.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Article</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An academic paper.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Book</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A set of written, printed, or blank pages fastened along one side and encased between protective covers.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Book_Chapter</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">One of the main divisions of a relatively lengthy piece of writing, such as a book, that is usually numbered or titled.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Conference_Paper</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An individual paper presented at a conference.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Contribution</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">What is being contributed, e.g, article, interview, book, etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Copyright</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The legal right granted to an author, composer, playwright, publisher, or distributor to exclusive publication, production, sale, or distribution of a literary, musical, dramatic, or artistic work.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Interview</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A conversation, such as one conducted by a reporter, in which facts or statements are elicited from another.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Keynote</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A keynote is a talk that establishes a main underlying theme.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Keyword</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A word used as a reference point for finding other words or information.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MasterThesis</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A dissertation advancing an original point of view as a result of research as a requirement for a master&apos;s degree.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PhdThesis</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A lengthy, formal treatise, written by a candidate for the doctoral degree at a university.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Presentation</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A public speaking directed to an audience in form of either an interview or a keynote.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Project</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A scientific project.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Publication</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A written communication of information to the public.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Review_Article</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A review article represents previously published material, rather than reporting new facts or analysis. Review articles are sometimes also called survey articles or, in news publishing, overview articles.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Source</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A reference pointing to the place where the contribution is located.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Technical_Report</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A technical report is a document that describes the process, progress, or results of technical or scientific research or the state of a technical or scientific research problem.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Thesis</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A dissertation advancing an original point of view as a result of research, especially as a requirement for an academic degree.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Working_Paper</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A preliminary scientific or technical paper. Often, authors will release working papers to share ideas about a topic or to elicit feedback before submitting to a peer reviewed conference or academic journal.</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
