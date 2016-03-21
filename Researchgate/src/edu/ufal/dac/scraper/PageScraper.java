@@ -81,8 +81,6 @@ public class PageScraper {
 			}
 		}
 		
-		https://www.researchgate.net/profile/Ig_Bittencourt/citations?sorting=recent&page=2
-
 		System.out.println(researchGateUrl+"profile/" + username);
 		return researchGateUrl+"profile/" + username;
 
