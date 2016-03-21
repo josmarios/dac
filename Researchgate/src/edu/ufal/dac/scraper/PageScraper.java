@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
@@ -71,14 +72,18 @@ public class PageScraper {
 			
 		for (Element el : doc.select("a")) {
 			url = el.attr("href");
+			
 			if (url.contains("profile/")) {
-				username = url.split("profile/")[1];
+				username = url.split("profile/")[1].split("/")[0];
 				
 				/*if (url.contains("/"))
 					username = url.split("/")[0]; */
 			}
 		}
 		
+		https://www.researchgate.net/profile/Ig_Bittencourt/citations?sorting=recent&page=2
+
+		System.out.println(researchGateUrl+"profile/" + username);
 		return researchGateUrl+"profile/" + username;
 
 	}
@@ -152,7 +157,9 @@ public class PageScraper {
 		author.setProfileUrl(profileUrl);
 
 		// name
-		author.setName(doc.getElementsByTag("title").text());
+		String aName = doc.getElementsByTag("title").text();
+		aName = aName.contains("\\(")?doc.getElementsByTag("title").text().split(" \\(")[0]:aName;
+		author.setName(aName);
 
 		// institution
 		author.setAffiliation(
@@ -263,16 +270,27 @@ public class PageScraper {
 
 		List<String> queryItems = loadData(queryList);
 		Author author;
+		FileWriter failedWriter = null;
+		
 
 		File dir = new File(output);
 		if (!dir.exists())
 			dir.mkdir();
+		
+		//failed list
+		try {
+			failedWriter = new FileWriter(new File(dir.getAbsoluteFile()+"/_ERROR"));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	
 
 		for (int i = 0; i < queryItems.size(); i++) {
 			try {
 
-				FileWriter fw = new FileWriter(new File(output + i + "-author"));
 				author = extractAuthorInfo(this.searchProfile(searchEngine, queryItems.get(i)));
+				FileWriter fw = new FileWriter(new File(output + author.getName()));
+				
 				
 			//	fw.write(new JSONObject(author).toString()); // error: Unsupported major.minor version 52.0
 				
@@ -282,10 +300,25 @@ public class PageScraper {
 
 			} catch (Exception e) {
 				System.err.println("Failed: " + queryItems.get(i));
+				try {
+					
+					failedWriter.write(queryItems.get(i)+"\n");
+					failedWriter.flush();
+				} catch (IOException e1) {
+					//e1.printStackTrace();
+				}
+			//	e.printStackTrace();
 				continue;
 			}
 		}
-
+		try {
+			failedWriter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
+	
+	
 
 }
