@@ -67,5 +67,11 @@ public class Article {
 		System.out.println("Article publisher: " + this.publisher);
 
 	}
+	
+	@Override
+	public String toString() {
+		return "URL "+this.url+"\n"+"TITLE: "+this.title+"\n*\n";
+	}
+	
 
 }

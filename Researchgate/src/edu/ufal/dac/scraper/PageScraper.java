@@ -15,6 +15,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+import com.google.gson.Gson;
+
 public class PageScraper {
 
 	/**
@@ -31,6 +33,7 @@ public class PageScraper {
 		try {
 
 			if (pageUrl.contains("http")) {
+				
 				URL url = new URL(pageUrl);
 				URLConnection connection = url.openConnection();
 
@@ -47,7 +50,7 @@ public class PageScraper {
 			e.printStackTrace();
 		}
 
-		// System.out.println(content);
+		 //System.out.println(content);
 		return content;
 	}
 
@@ -63,15 +66,20 @@ public class PageScraper {
 		String username = "";
 		Document doc = Jsoup.parse(page);
 		String url;
+		String researchGateUrl = "https://www.researchgate.net/";
+		
+			
 		for (Element el : doc.select("a")) {
 			url = el.attr("href");
 			if (url.contains("profile/")) {
-				url = url.split("profile/")[1];
-				if (url.contains("/"))
-					username = url.split("/")[0];
+				username = url.split("profile/")[1];
+				
+				/*if (url.contains("/"))
+					username = url.split("/")[0]; */
 			}
 		}
-		return "https://www.researchgate.net/profile/" + username;
+		
+		return researchGateUrl+"profile/" + username;
 
 	}
 	//
@@ -98,10 +106,13 @@ public class PageScraper {
 		query = query.replace(" ", "+");
 
 		String search = searchEngine + "researchgate+" + query;
+		
+		String profileUrl = getProfileUrl(getPageContent(search));
+		
+		//profile = getPageContent(profileUrl); 
 
-		profile = getPageContent(getProfileUrl(getPageContent(search)));
-
-		return profile;
+		//return profile;
+		return profileUrl;
 	}
 
 	/**
@@ -214,7 +225,6 @@ public class PageScraper {
 					String publisher = docDetails.select("meta[name=citation_journal_title]").attr("content");
 					if (publisher == "") {
 						publisher = docDetails.select("div[class=pub-details js-pub-details]").first().toString();
-						//TODO:
 						// 1) Fix formatting
 						// 2) Test additional possible tags
 					}
@@ -262,9 +272,12 @@ public class PageScraper {
 			try {
 
 				FileWriter fw = new FileWriter(new File(output + i + "-author"));
-				author = extractAuthorInfo(this.getProfileUrl(this.searchProfile(searchEngine, queryItems.get(i))));
+				author = extractAuthorInfo(this.searchProfile(searchEngine, queryItems.get(i)));
+				
 			//	fw.write(new JSONObject(author).toString()); // error: Unsupported major.minor version 52.0
-				fw.write(author.toString());
+				
+				fw.write(new Gson().toJson(author));
+				//fw.write(author.toString());
 				fw.close();
 
 			} catch (Exception e) {
