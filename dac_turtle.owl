@@ -1,0 +1,682 @@
+@prefix : <http://www.w3.org/2002/07/owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.ic.ufal.br/dac/> .
+
+<http://www.ic.ufal.br/dac/> rdf:type owl:Ontology ;
+                             
+                             owl:imports <http://purl.org/spar/biro> ,
+                                         <http://www.w3.org/ns/dcat> ,
+                                         <http://purl.org/dc/terms/> ,
+                                         <http://purl.org/spar/bido> ,
+                                         <http://purl.org/spar/fabio/> ,
+                                         <http://lod.springer.com/data/dataset/springer/ontology> ,
+                                         <http://xmlns.com/foaf/0.1/> .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.ic.ufal.br/dac/#describesArticle
+
+<http://www.ic.ufal.br/dac/#describesArticle> rdf:type owl:ObjectProperty ;
+                                              
+                                              owl:inverseOf <http://www.ic.ufal.br/dac/#hasKeyword> ;
+                                              
+                                              rdfs:domain <http://www.ic.ufal.br/dac/#Keyword> ,
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <http://www.ic.ufal.br/dac/#describesArticle> ;
+                                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass <http://www.ic.ufal.br/dac/#Article>
+                                                          ] ;
+                                              
+                                              rdfs:range <http://www.ic.ufal.br/dac/#Article> .
+
+
+
+###  http://www.ic.ufal.br/dac/#grantsRightTo
+
+<http://www.ic.ufal.br/dac/#grantsRightTo> rdf:type owl:ObjectProperty ;
+                                           
+                                           owl:inverseOf <http://www.ic.ufal.br/dac/#hasCopyright> ;
+                                           
+                                           rdfs:domain [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <http://www.ic.ufal.br/dac/#grantsRightTo> ;
+                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                         owl:onClass <http://www.ic.ufal.br/dac/#Contribution>
+                                                       ] ;
+                                           
+                                           rdfs:range <http://www.ic.ufal.br/dac/#Contribution> .
+
+
+
+###  http://www.ic.ufal.br/dac/#hasAuthor
+
+<http://www.ic.ufal.br/dac/#hasAuthor> rdf:type owl:ObjectProperty ;
+                                       
+                                       owl:inverseOf <http://www.ic.ufal.br/dac/#hasContribution> ;
+                                       
+                                       rdfs:domain <http://www.ic.ufal.br/dac/#Contribution> ;
+                                       
+                                       rdfs:range <http://www.ic.ufal.br/dac/#Author> .
+
+
+
+###  http://www.ic.ufal.br/dac/#hasBibliometricData
+
+<http://www.ic.ufal.br/dac/#hasBibliometricData> rdf:type owl:ObjectProperty ;
+                                                 
+                                                 rdfs:subPropertyOf <http://purl.org/vocab/frbr/core#relatedEndeavour> ;
+                                                 
+                                                 rdfs:domain <http://www.ic.ufal.br/dac/#Contribution> ;
+                                                 
+                                                 rdfs:range <http://purl.org/spar/bido/BibliometricData> .
+
+
+
+###  http://www.ic.ufal.br/dac/#hasBibliometricDataInTime
+
+<http://www.ic.ufal.br/dac/#hasBibliometricDataInTime> rdf:type owl:ObjectProperty ;
+                                                       
+                                                       rdfs:domain <http://www.ic.ufal.br/dac/#Author> ;
+                                                       
+                                                       rdfs:range <http://purl.org/spar/bido/BibliometricDataInTime> .
+
+
+
+###  http://www.ic.ufal.br/dac/#hasChapter
+
+<http://www.ic.ufal.br/dac/#hasChapter> rdf:type owl:ObjectProperty ;
+                                        
+                                        owl:inverseOf <http://www.ic.ufal.br/dac/#isAttachedTo> ;
+                                        
+                                        rdfs:domain <http://www.ic.ufal.br/dac/#Book> ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://www.ic.ufal.br/dac/#hasChapter> ;
+                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onClass <http://www.ic.ufal.br/dac/#Book_Chapter>
+                                                    ] ;
+                                        
+                                        rdfs:range <http://www.ic.ufal.br/dac/#Book_Chapter> .
+
+
+
+###  http://www.ic.ufal.br/dac/#hasContribution
+
+<http://www.ic.ufal.br/dac/#hasContribution> rdf:type owl:ObjectProperty ;
+                                             
+                                             rdfs:domain <http://www.ic.ufal.br/dac/#Author> ;
+                                             
+                                             rdfs:range <http://www.ic.ufal.br/dac/#Contribution> .
+
+
+
+###  http://www.ic.ufal.br/dac/#hasCopyright
+
+<http://www.ic.ufal.br/dac/#hasCopyright> rdf:type owl:ObjectProperty ;
+                                          
+                                          rdfs:domain <http://www.ic.ufal.br/dac/#Contribution> .
+
+
+
+###  http://www.ic.ufal.br/dac/#hasKeyword
+
+<http://www.ic.ufal.br/dac/#hasKeyword> rdf:type owl:ObjectProperty ;
+                                        
+                                        rdfs:domain <http://www.ic.ufal.br/dac/#Article> ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://www.ic.ufal.br/dac/#hasKeyword> ;
+                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onClass <http://www.ic.ufal.br/dac/#Keyword>
+                                                    ] ;
+                                        
+                                        rdfs:range <http://www.ic.ufal.br/dac/#Keyword> .
+
+
+
+###  http://www.ic.ufal.br/dac/#hasSource
+
+<http://www.ic.ufal.br/dac/#hasSource> rdf:type owl:ObjectProperty ;
+                                       
+                                       owl:inverseOf <http://www.ic.ufal.br/dac/#locatesContribution> ;
+                                       
+                                       rdfs:domain <http://www.ic.ufal.br/dac/#Contribution> ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://www.ic.ufal.br/dac/#hasSource> ;
+                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass <http://www.ic.ufal.br/dac/#Source>
+                                                   ] ;
+                                       
+                                       rdfs:range <http://www.ic.ufal.br/dac/#Source> .
+
+
+
+###  http://www.ic.ufal.br/dac/#hasSubject
+
+<http://www.ic.ufal.br/dac/#hasSubject> rdf:type owl:ObjectProperty ;
+                                        
+                                        rdfs:domain <http://www.ic.ufal.br/dac/#Author> ;
+                                        
+                                        rdfs:range <http://purl.org/spar/fabio/SubjectDiscipline> .
+
+
+
+###  http://www.ic.ufal.br/dac/#isAttachedTo
+
+<http://www.ic.ufal.br/dac/#isAttachedTo> rdf:type owl:ObjectProperty ;
+                                          
+                                          rdfs:domain <http://www.ic.ufal.br/dac/#Book_Chapter> ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <http://www.ic.ufal.br/dac/#isAttachedTo> ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onClass <http://www.ic.ufal.br/dac/#Book>
+                                                      ] ;
+                                          
+                                          rdfs:range <http://www.ic.ufal.br/dac/#Book> .
+
+
+
+###  http://www.ic.ufal.br/dac/#isPublishedIn
+
+<http://www.ic.ufal.br/dac/#isPublishedIn> rdf:type owl:ObjectProperty ;
+                                           
+                                           rdfs:domain <http://www.ic.ufal.br/dac/#Contribution> ;
+                                           
+                                           rdfs:range <http://lod.springer.com/data/ontology/class/Conference> .
+
+
+
+###  http://www.ic.ufal.br/dac/#locatesContribution
+
+<http://www.ic.ufal.br/dac/#locatesContribution> rdf:type owl:ObjectProperty ;
+                                                 
+                                                 rdfs:domain <http://www.ic.ufal.br/dac/#Source> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://www.ic.ufal.br/dac/#hasSource> ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass <http://www.ic.ufal.br/dac/#Contribution>
+                                                             ] ;
+                                                 
+                                                 rdfs:range <http://www.ic.ufal.br/dac/#Contribution> .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.ic.ufal.br/dac/#abstract
+
+<http://www.ic.ufal.br/dac/#abstract> rdf:type owl:DatatypeProperty ;
+                                      
+                                      rdfs:domain <http://www.ic.ufal.br/dac/#Article> ;
+                                      
+                                      rdfs:range xsd:string .
+
+
+
+###  http://www.ic.ufal.br/dac/#bookVolume
+
+<http://www.ic.ufal.br/dac/#bookVolume> rdf:type owl:DatatypeProperty ;
+                                        
+                                        rdfs:domain <http://www.ic.ufal.br/dac/#Book> ;
+                                        
+                                        rdfs:range xsd:int .
+
+
+
+###  http://www.ic.ufal.br/dac/#chapterNumber
+
+<http://www.ic.ufal.br/dac/#chapterNumber> rdf:type owl:DatatypeProperty ;
+                                           
+                                           rdfs:domain <http://www.ic.ufal.br/dac/#Book_Chapter> ;
+                                           
+                                           rdfs:range xsd:int .
+
+
+
+###  http://www.ic.ufal.br/dac/#citationsNumber
+
+<http://www.ic.ufal.br/dac/#citationsNumber> rdf:type owl:DatatypeProperty ;
+                                             
+                                             rdfs:domain <http://www.ic.ufal.br/dac/#Publication> ;
+                                             
+                                             rdfs:range xsd:int .
+
+
+
+###  http://www.ic.ufal.br/dac/#contributionDate
+
+<http://www.ic.ufal.br/dac/#contributionDate> rdf:type owl:DatatypeProperty ;
+                                              
+                                              rdfs:domain <http://www.ic.ufal.br/dac/#Contribution> ;
+                                              
+                                              rdfs:range xsd:dateTime .
+
+
+
+###  http://www.ic.ufal.br/dac/#contributionDescription
+
+<http://www.ic.ufal.br/dac/#contributionDescription> rdf:type owl:DatatypeProperty ;
+                                                     
+                                                     rdfs:domain <http://www.ic.ufal.br/dac/#Contribution> ;
+                                                     
+                                                     rdfs:range xsd:string .
+
+
+
+###  http://www.ic.ufal.br/dac/#contributionTitle
+
+<http://www.ic.ufal.br/dac/#contributionTitle> rdf:type owl:DatatypeProperty ;
+                                               
+                                               rdfs:domain <http://www.ic.ufal.br/dac/#Contribution> ;
+                                               
+                                               rdfs:range xsd:string .
+
+
+
+###  http://www.ic.ufal.br/dac/#copyright
+
+<http://www.ic.ufal.br/dac/#copyright> rdf:type owl:DatatypeProperty ;
+                                       
+                                       rdfs:domain <http://www.ic.ufal.br/dac/#Contribution> ;
+                                       
+                                       rdfs:range xsd:string .
+
+
+
+###  http://www.ic.ufal.br/dac/#copyrightDescription
+
+<http://www.ic.ufal.br/dac/#copyrightDescription> rdf:type owl:DatatypeProperty ;
+                                                  
+                                                  rdfs:range xsd:string .
+
+
+
+###  http://www.ic.ufal.br/dac/#impactFactor
+
+<http://www.ic.ufal.br/dac/#impactFactor> rdf:type owl:DatatypeProperty ;
+                                          
+                                          rdfs:domain <http://www.ic.ufal.br/dac/#Academic_Journal> ;
+                                          
+                                          rdfs:range xsd:float .
+
+
+
+###  http://www.ic.ufal.br/dac/#isbn
+
+<http://www.ic.ufal.br/dac/#isbn> rdf:type owl:DatatypeProperty ;
+                                  
+                                  rdfs:domain <http://www.ic.ufal.br/dac/#Book> ;
+                                  
+                                  rdfs:range xsd:long .
+
+
+
+###  http://www.ic.ufal.br/dac/#kewordText
+
+<http://www.ic.ufal.br/dac/#kewordText> rdf:type owl:DatatypeProperty ;
+                                        
+                                        rdfs:domain <http://www.ic.ufal.br/dac/#Keyword> ;
+                                        
+                                        rdfs:range xsd:string .
+
+
+
+###  http://www.ic.ufal.br/dac/#pagesNumber
+
+<http://www.ic.ufal.br/dac/#pagesNumber> rdf:type owl:DatatypeProperty ;
+                                         
+                                         rdfs:domain <http://www.ic.ufal.br/dac/#Publication> ;
+                                         
+                                         rdfs:range xsd:int .
+
+
+
+###  http://www.ic.ufal.br/dac/#presentationDuration
+
+<http://www.ic.ufal.br/dac/#presentationDuration> rdf:type owl:DatatypeProperty ;
+                                                  
+                                                  rdfs:domain <http://www.ic.ufal.br/dac/#Presentation> ;
+                                                  
+                                                  rdfs:range xsd:long .
+
+
+
+###  http://www.ic.ufal.br/dac/#questionsNumber
+
+<http://www.ic.ufal.br/dac/#questionsNumber> rdf:type owl:DatatypeProperty ;
+                                             
+                                             rdfs:domain <http://www.ic.ufal.br/dac/#Interview> ;
+                                             
+                                             rdfs:range xsd:int .
+
+
+
+###  http://www.ic.ufal.br/dac/#sourceName
+
+<http://www.ic.ufal.br/dac/#sourceName> rdf:type owl:DatatypeProperty ;
+                                        
+                                        rdfs:domain <http://www.ic.ufal.br/dac/#Source> ;
+                                        
+                                        rdfs:range xsd:string .
+
+
+
+###  http://www.ic.ufal.br/dac/#sourceUri
+
+<http://www.ic.ufal.br/dac/#sourceUri> rdf:type owl:DatatypeProperty ;
+                                       
+                                       rdfs:domain <http://www.ic.ufal.br/dac/#Source> ;
+                                       
+                                       rdfs:range xsd:anyURI .
+
+
+
+###  http://www.ic.ufal.br/dac/#versionNumber
+
+<http://www.ic.ufal.br/dac/#versionNumber> rdf:type owl:DatatypeProperty ;
+                                           
+                                           rdfs:domain <http://www.ic.ufal.br/dac/#Working_Paper> ;
+                                           
+                                           rdfs:range xsd:float .
+
+
+
+###  http://www.ic.ufal.br/dac/#volumeNumber
+
+<http://www.ic.ufal.br/dac/#volumeNumber> rdf:type owl:DatatypeProperty ;
+                                          
+                                          rdfs:domain <http://www.ic.ufal.br/dac/#Book> ;
+                                          
+                                          rdfs:range xsd:int .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://lod.springer.com/data/ontology/class/Conference
+
+<http://lod.springer.com/data/ontology/class/Conference> rdf:type owl:Class .
+
+
+
+###  http://purl.org/spar/fabio/Work
+
+<http://purl.org/spar/fabio/Work> owl:equivalentClass <http://www.ic.ufal.br/dac/#Contribution> .
+
+
+
+###  http://www.ic.ufal.br/dac/#Academic_Journal
+
+<http://www.ic.ufal.br/dac/#Academic_Journal> rdf:type owl:Class ;
+                                              
+                                              rdfs:subClassOf <http://www.ic.ufal.br/dac/#Article> ;
+                                              
+                                              rdfs:comment "An academic or scholarly journal is a peer-reviewed or refereed periodical in which scholarship relating to a particular academic discipline is published."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Article
+
+<http://www.ic.ufal.br/dac/#Article> rdf:type owl:Class ;
+                                     
+                                     rdfs:subClassOf <http://www.ic.ufal.br/dac/#Publication> ;
+                                     
+                                     rdfs:comment "An academic paper."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Author
+
+<http://www.ic.ufal.br/dac/#Author> rdf:type owl:Class ;
+                                    
+                                    rdfs:subClassOf <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+
+
+
+###  http://www.ic.ufal.br/dac/#Book
+
+<http://www.ic.ufal.br/dac/#Book> rdf:type owl:Class ;
+                                  
+                                  rdfs:subClassOf <http://www.ic.ufal.br/dac/#Publication> ;
+                                  
+                                  rdfs:comment "A set of written, printed, or blank pages fastened along one side and encased between protective covers."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Book_Chapter
+
+<http://www.ic.ufal.br/dac/#Book_Chapter> rdf:type owl:Class ;
+                                          
+                                          rdfs:subClassOf <http://www.ic.ufal.br/dac/#Publication> ;
+                                          
+                                          rdfs:comment "One of the main divisions of a relatively lengthy piece of writing, such as a book, that is usually numbered or titled."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Conference_Paper
+
+<http://www.ic.ufal.br/dac/#Conference_Paper> rdf:type owl:Class ;
+                                              
+                                              rdfs:subClassOf <http://www.ic.ufal.br/dac/#Article> ;
+                                              
+                                              rdfs:comment "An individual paper presented at a conference."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Contribution
+
+<http://www.ic.ufal.br/dac/#Contribution> rdf:type owl:Class ;
+                                          
+                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <http://www.ic.ufal.br/dac/#hasAuthor> ;
+                                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass <http://www.ic.ufal.br/dac/#Author>
+                                                          ] ;
+                                          
+                                          rdfs:comment "What is being contributed, e.g, article, interview, book, etc."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Interview
+
+<http://www.ic.ufal.br/dac/#Interview> rdf:type owl:Class ;
+                                       
+                                       rdfs:subClassOf <http://www.ic.ufal.br/dac/#Presentation> ;
+                                       
+                                       owl:disjointWith <http://www.ic.ufal.br/dac/#Keynote> ;
+                                       
+                                       rdfs:comment "A conversation, such as one conducted by a reporter, in which facts or statements are elicited from another."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Keynote
+
+<http://www.ic.ufal.br/dac/#Keynote> rdf:type owl:Class ;
+                                     
+                                     rdfs:subClassOf <http://www.ic.ufal.br/dac/#Presentation> ;
+                                     
+                                     rdfs:comment "A keynote is a talk that establishes a main underlying theme."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Keyword
+
+<http://www.ic.ufal.br/dac/#Keyword> rdf:type owl:Class ;
+                                     
+                                     rdfs:comment "A word used as a reference point for finding other words or information."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#MasterThesis
+
+<http://www.ic.ufal.br/dac/#MasterThesis> rdf:type owl:Class ;
+                                          
+                                          rdfs:subClassOf <http://www.ic.ufal.br/dac/#Thesis> ;
+                                          
+                                          owl:disjointWith <http://www.ic.ufal.br/dac/#PhdThesis> ;
+                                          
+                                          rdfs:comment "A dissertation advancing an original point of view as a result of research as a requirement for a master's degree."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#PhdThesis
+
+<http://www.ic.ufal.br/dac/#PhdThesis> rdf:type owl:Class ;
+                                       
+                                       rdfs:subClassOf <http://www.ic.ufal.br/dac/#Thesis> ;
+                                       
+                                       rdfs:comment "A lengthy, formal treatise, written by a candidate for the doctoral degree at a university."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Presentation
+
+<http://www.ic.ufal.br/dac/#Presentation> rdf:type owl:Class ;
+                                          
+                                          rdfs:subClassOf <http://www.ic.ufal.br/dac/#Contribution> ;
+                                          
+                                          owl:disjointWith <http://www.ic.ufal.br/dac/#Publication> ;
+                                          
+                                          rdfs:comment "A public speaking directed to an audience in form of either an interview or a keynote."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Project
+
+<http://www.ic.ufal.br/dac/#Project> rdf:type owl:Class ;
+                                     
+                                     rdfs:subClassOf <http://www.ic.ufal.br/dac/#Publication> ;
+                                     
+                                     rdfs:comment "A scientific project."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Publication
+
+<http://www.ic.ufal.br/dac/#Publication> rdf:type owl:Class ;
+                                         
+                                         rdfs:subClassOf <http://www.ic.ufal.br/dac/#Contribution> ;
+                                         
+                                         rdfs:comment "A written communication of information to the public."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Review_Article
+
+<http://www.ic.ufal.br/dac/#Review_Article> rdf:type owl:Class ;
+                                            
+                                            rdfs:subClassOf <http://www.ic.ufal.br/dac/#Article> ;
+                                            
+                                            rdfs:comment "A review article represents previously published material, rather than reporting new facts or analysis. Review articles are sometimes also called survey articles or, in news publishing, overview articles."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Source
+
+<http://www.ic.ufal.br/dac/#Source> rdf:type owl:Class ;
+                                    
+                                    rdfs:comment "A reference pointing to the place where the contribution is located."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Technical_Report
+
+<http://www.ic.ufal.br/dac/#Technical_Report> rdf:type owl:Class ;
+                                              
+                                              rdfs:subClassOf <http://www.ic.ufal.br/dac/#Publication> ;
+                                              
+                                              rdfs:comment "A technical report is a document that describes the process, progress, or results of technical or scientific research or the state of a technical or scientific research problem."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Thesis
+
+<http://www.ic.ufal.br/dac/#Thesis> rdf:type owl:Class ;
+                                    
+                                    rdfs:subClassOf <http://www.ic.ufal.br/dac/#Publication> ;
+                                    
+                                    rdfs:comment "A dissertation advancing an original point of view as a result of research, especially as a requirement for an academic degree."@en .
+
+
+
+###  http://www.ic.ufal.br/dac/#Working_Paper
+
+<http://www.ic.ufal.br/dac/#Working_Paper> rdf:type owl:Class ;
+                                           
+                                           rdfs:subClassOf <http://www.ic.ufal.br/dac/#Article> ;
+                                           
+                                           rdfs:comment "A preliminary scientific or technical paper. Often, authors will release working papers to share ideas about a topic or to elicit feedback before submitting to a peer reviewed conference or academic journal."@en .
+
+
+
+###  http://www.w3.org/2000/10/swap/pim/contact#Person
+
+<http://www.w3.org/2000/10/swap/pim/contact#Person> rdf:type owl:Class .
+
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+
+<http://xmlns.com/foaf/0.1/Agent> rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://www.ic.ufal.br/dac/#hasContribution> ;
+                                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass <http://www.ic.ufal.br/dac/#Contribution>
+                                                  ] .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.ic.ufal.br/dac/#Academic_Journal>
+                <http://www.ic.ufal.br/dac/#Conference_Paper>
+                <http://www.ic.ufal.br/dac/#Review_Article>
+                <http://www.ic.ufal.br/dac/#Working_Paper>
+              )
+] .
+
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.ic.ufal.br/dac/#Article>
+                <http://www.ic.ufal.br/dac/#Book>
+                <http://www.ic.ufal.br/dac/#Book_Chapter>
+                <http://www.ic.ufal.br/dac/#Project>
+                <http://www.ic.ufal.br/dac/#Technical_Report>
+                <http://www.ic.ufal.br/dac/#Thesis>
+              )
+] .
+
+
+
+
+###  Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
+
