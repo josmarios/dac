@@ -1,0 +1,668 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:schema="http://schema.org/"
+     xmlns:void="http://rdfs.org/ns/void#"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos1="http://www.w3.org/2008/05/skos#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:dcat="http://www.w3.org/ns/dcat#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <Ontology rdf:about="http://www.ic.ufal.br/dac/">
+        <imports rdf:resource="http://purl.org/spar/biro"/>
+        <imports rdf:resource="http://www.w3.org/ns/dcat"/>
+        <imports rdf:resource="http://purl.org/dc/terms/"/>
+        <imports rdf:resource="http://purl.org/spar/bido"/>
+        <imports rdf:resource="http://purl.org/spar/fabio/"/>
+        <imports rdf:resource="http://lod.springer.com/data/dataset/springer/ontology"/>
+        <imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#describesArticle -->
+
+    <ObjectProperty rdf:about="http://www.ic.ufal.br/dac/#describesArticle">
+        <inverseOf rdf:resource="http://www.ic.ufal.br/dac/#hasKeyword"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Keyword"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="http://www.ic.ufal.br/dac/#describesArticle"/>
+                <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</minQualifiedCardinality>
+                <onClass rdf:resource="http://www.ic.ufal.br/dac/#Article"/>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/dac/#Article"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#grantsRightTo -->
+
+    <ObjectProperty rdf:about="http://www.ic.ufal.br/dac/#grantsRightTo">
+        <inverseOf rdf:resource="http://www.ic.ufal.br/dac/#hasCopyright"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="http://www.ic.ufal.br/dac/#grantsRightTo"/>
+                <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</minQualifiedCardinality>
+                <onClass rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#hasAuthor -->
+
+    <ObjectProperty rdf:about="http://www.ic.ufal.br/dac/#hasAuthor">
+        <inverseOf rdf:resource="http://www.ic.ufal.br/dac/#hasContribution"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/dac/#Author"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#hasBibliometricData -->
+
+    <ObjectProperty rdf:about="http://www.ic.ufal.br/dac/#hasBibliometricData">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#relatedEndeavour"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+        <rdfs:range rdf:resource="http://purl.org/spar/bido/BibliometricData"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#hasBibliometricDataInTime -->
+
+    <ObjectProperty rdf:about="http://www.ic.ufal.br/dac/#hasBibliometricDataInTime">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Author"/>
+        <rdfs:range rdf:resource="http://purl.org/spar/bido/BibliometricDataInTime"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#hasChapter -->
+
+    <ObjectProperty rdf:about="http://www.ic.ufal.br/dac/#hasChapter">
+        <inverseOf rdf:resource="http://www.ic.ufal.br/dac/#isAttachedTo"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Book"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="http://www.ic.ufal.br/dac/#hasChapter"/>
+                <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</minQualifiedCardinality>
+                <onClass rdf:resource="http://www.ic.ufal.br/dac/#Book_Chapter"/>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/dac/#Book_Chapter"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#hasContribution -->
+
+    <ObjectProperty rdf:about="http://www.ic.ufal.br/dac/#hasContribution">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Author"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#hasCopyright -->
+
+    <ObjectProperty rdf:about="http://www.ic.ufal.br/dac/#hasCopyright">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#hasKeyword -->
+
+    <ObjectProperty rdf:about="http://www.ic.ufal.br/dac/#hasKeyword">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Article"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="http://www.ic.ufal.br/dac/#hasKeyword"/>
+                <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</minQualifiedCardinality>
+                <onClass rdf:resource="http://www.ic.ufal.br/dac/#Keyword"/>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/dac/#Keyword"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#hasSource -->
+
+    <ObjectProperty rdf:about="http://www.ic.ufal.br/dac/#hasSource">
+        <inverseOf rdf:resource="http://www.ic.ufal.br/dac/#locatesContribution"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="http://www.ic.ufal.br/dac/#hasSource"/>
+                <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</minQualifiedCardinality>
+                <onClass rdf:resource="http://www.ic.ufal.br/dac/#Source"/>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/dac/#Source"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#hasSubject -->
+
+    <ObjectProperty rdf:about="http://www.ic.ufal.br/dac/#hasSubject">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Author"/>
+        <rdfs:range rdf:resource="http://purl.org/spar/fabio/SubjectDiscipline"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#isAttachedTo -->
+
+    <ObjectProperty rdf:about="http://www.ic.ufal.br/dac/#isAttachedTo">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Book_Chapter"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="http://www.ic.ufal.br/dac/#isAttachedTo"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onClass rdf:resource="http://www.ic.ufal.br/dac/#Book"/>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/dac/#Book"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#isPublishedIn -->
+
+    <ObjectProperty rdf:about="http://www.ic.ufal.br/dac/#isPublishedIn">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+        <rdfs:range rdf:resource="http://lod.springer.com/data/ontology/class/Conference"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#locatesContribution -->
+
+    <ObjectProperty rdf:about="http://www.ic.ufal.br/dac/#locatesContribution">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Source"/>
+        <rdfs:domain>
+            <Restriction>
+                <onProperty rdf:resource="http://www.ic.ufal.br/dac/#hasSource"/>
+                <qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</qualifiedCardinality>
+                <onClass rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+            </Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#abstract -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#abstract">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Article"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#bookVolume -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#bookVolume">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Book"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#chapterNumber -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#chapterNumber">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Book_Chapter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#citationsNumber -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#citationsNumber">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Publication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#contributionDate -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#contributionDate">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#contributionDescription -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#contributionDescription">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#contributionTitle -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#contributionTitle">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#copyright -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#copyright">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#copyrightDescription -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#copyrightDescription">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#impactFactor -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#impactFactor">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Academic_Journal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#isbn -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#isbn">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Book"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#kewordText -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#kewordText">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Keyword"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#pagesNumber -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#pagesNumber">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Publication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#presentationDuration -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#presentationDuration">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Presentation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#questionsNumber -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#questionsNumber">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Interview"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#sourceName -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#sourceName">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Source"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#sourceUri -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#sourceUri">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Source"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#versionNumber -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#versionNumber">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Working_Paper"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#volumeNumber -->
+
+    <DatatypeProperty rdf:about="http://www.ic.ufal.br/dac/#volumeNumber">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/dac/#Book"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lod.springer.com/data/ontology/class/Conference -->
+
+    <Class rdf:about="http://lod.springer.com/data/ontology/class/Conference"/>
+    
+
+
+    <!-- http://purl.org/spar/fabio/Work -->
+
+    <rdf:Description rdf:about="http://purl.org/spar/fabio/Work">
+        <equivalentClass rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Academic_Journal -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Academic_Journal">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Article"/>
+        <rdfs:comment xml:lang="en">An academic or scholarly journal is a peer-reviewed or refereed periodical in which scholarship relating to a particular academic discipline is published.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Article -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Article">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Publication"/>
+        <rdfs:comment xml:lang="en">An academic paper.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Author -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Author">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Book -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Book">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Publication"/>
+        <rdfs:comment xml:lang="en">A set of written, printed, or blank pages fastened along one side and encased between protective covers.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Book_Chapter -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Book_Chapter">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Publication"/>
+        <rdfs:comment xml:lang="en">One of the main divisions of a relatively lengthy piece of writing, such as a book, that is usually numbered or titled.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Conference_Paper -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Conference_Paper">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Article"/>
+        <rdfs:comment xml:lang="en">An individual paper presented at a conference.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Contribution -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Contribution">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.ic.ufal.br/dac/#hasAuthor"/>
+                <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</minQualifiedCardinality>
+                <onClass rdf:resource="http://www.ic.ufal.br/dac/#Author"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">What is being contributed, e.g, article, interview, book, etc.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Interview -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Interview">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Presentation"/>
+        <disjointWith rdf:resource="http://www.ic.ufal.br/dac/#Keynote"/>
+        <rdfs:comment xml:lang="en">A conversation, such as one conducted by a reporter, in which facts or statements are elicited from another.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Keynote -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Keynote">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Presentation"/>
+        <rdfs:comment xml:lang="en">A keynote is a talk that establishes a main underlying theme.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Keyword -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Keyword">
+        <rdfs:comment xml:lang="en">A word used as a reference point for finding other words or information.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#MasterThesis -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#MasterThesis">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Thesis"/>
+        <disjointWith rdf:resource="http://www.ic.ufal.br/dac/#PhdThesis"/>
+        <rdfs:comment xml:lang="en">A dissertation advancing an original point of view as a result of research as a requirement for a master&apos;s degree.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#PhdThesis -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#PhdThesis">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Thesis"/>
+        <rdfs:comment xml:lang="en">A lengthy, formal treatise, written by a candidate for the doctoral degree at a university.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Presentation -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Presentation">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+        <disjointWith rdf:resource="http://www.ic.ufal.br/dac/#Publication"/>
+        <rdfs:comment xml:lang="en">A public speaking directed to an audience in form of either an interview or a keynote.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Project -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Project">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Publication"/>
+        <rdfs:comment xml:lang="en">A scientific project.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Publication -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Publication">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+        <rdfs:comment xml:lang="en">A written communication of information to the public.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Review_Article -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Review_Article">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Article"/>
+        <rdfs:comment xml:lang="en">A review article represents previously published material, rather than reporting new facts or analysis. Review articles are sometimes also called survey articles or, in news publishing, overview articles.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Source -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Source">
+        <rdfs:comment xml:lang="en">A reference pointing to the place where the contribution is located.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Technical_Report -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Technical_Report">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Publication"/>
+        <rdfs:comment xml:lang="en">A technical report is a document that describes the process, progress, or results of technical or scientific research or the state of a technical or scientific research problem.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Thesis -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Thesis">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Publication"/>
+        <rdfs:comment xml:lang="en">A dissertation advancing an original point of view as a result of research, especially as a requirement for an academic degree.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.ic.ufal.br/dac/#Working_Paper -->
+
+    <Class rdf:about="http://www.ic.ufal.br/dac/#Working_Paper">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/dac/#Article"/>
+        <rdfs:comment xml:lang="en">A preliminary scientific or technical paper. Often, authors will release working papers to share ideas about a topic or to elicit feedback before submitting to a peer reviewed conference or academic journal.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2000/10/swap/pim/contact#Person -->
+
+    <Class rdf:about="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.ic.ufal.br/dac/#hasContribution"/>
+                <minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</minQualifiedCardinality>
+                <onClass rdf:resource="http://www.ic.ufal.br/dac/#Contribution"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ic.ufal.br/dac/#Academic_Journal"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/dac/#Conference_Paper"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/dac/#Review_Article"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/dac/#Working_Paper"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ic.ufal.br/dac/#Article"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/dac/#Book"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/dac/#Book_Chapter"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/dac/#Project"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/dac/#Technical_Report"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/dac/#Thesis"/>
+        </members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+
