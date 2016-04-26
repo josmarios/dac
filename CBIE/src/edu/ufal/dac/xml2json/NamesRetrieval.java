@@ -16,26 +16,29 @@ public class NamesRetrieval {
 	private List<String> getAuthorList(String data) {
 		List<String> names = new ArrayList<String>();
 		JSONObject json = new JSONObject(data);
-
+		
 		for (Object obj : json.getJSONArray("papers")) {
 			JSONObject paper = (JSONObject) obj;
-
-			try {
-				JSONObject article = (JSONObject) paper.get("article");
-
-				if (article.get("author") instanceof JSONObject) {
-					JSONObject author = ((JSONObject) article.get("author"));
-					names.add(joinNames(author));
-				} else {
-					JSONArray coAuthors = ((JSONArray) article.get("author"));
+			
+			//TODO issue appears to be in here
+			try {				
+				for (Object art: paper.getJSONArray("article")) {
+					JSONObject article = (JSONObject) art;
 					
-					for (Object object : coAuthors) {
-						JSONObject author = (JSONObject) object;
+					if (article.get("author") instanceof JSONObject) {
+						JSONObject author = ((JSONObject) article.get("author"));
 						names.add(joinNames(author));
+					} else {
+						JSONArray coAuthors = ((JSONArray) article.get("author"));
+						
+						for (Object object : coAuthors) {
+							JSONObject author = (JSONObject) object;
+							names.add(joinNames(author));
+						}
 					}
 				}
 			} catch (Exception e) {
-				System.err.println("Failed: " + paper.toString());
+				System.err.println(e.getMessage());
 				continue;
 			}
 		}
@@ -47,12 +50,12 @@ public class NamesRetrieval {
 		Set<String> set = new LinkedHashSet<String>(names);
 		names.clear();
 		names.addAll(set);
-
+		
 		try {
 			FileWriter fw = new FileWriter(new File(filename));
 			for (String name : names)
 				fw.write("\"" + name + "\",\n");
-			
+
 			fw.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -66,12 +69,13 @@ public class NamesRetrieval {
 		first = author.has("firstname") ? (String) author.get("firstname") : "";
 		middle = author.has("middlename") ? (String) author.get("middlename") : "";
 		last = author.has("lastname") ? (String) author.get("lastname") : "";
-		
+
 		fullName = first + " " + middle + " " + last;
 		return fullName;
 	}
 
 	public void processNames(String jsonData, String filename) {
+		System.out.println("Started processing names");
 		saveNames(getAuthorList(jsonData), filename);
 	}
 

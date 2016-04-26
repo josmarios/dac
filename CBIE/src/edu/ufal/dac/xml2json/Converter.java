@@ -13,6 +13,14 @@ import org.jsoup.nodes.Document;
 
 public class Converter {
 
+	/**
+	 * Returns file content as a String
+	 * @param file
+	 * @return output
+	 */
+	
+	//int a=1;
+	
 	public String loadFile(File file) {
 		System.out.println("Loading: " + file.getName());
 		String line, output = "";
@@ -26,27 +34,36 @@ public class Converter {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		// System.out.println(output);
 		return output;
 	}
 
-	public String convert(String xmlContent) {
+	/**
+	 * Parses XML file and converts to JSON
+	 * @param xmlContent
+	 * @return
+	 */
+	private String convert(String xmlContent) {
 
 		try {
-			Document doc = Jsoup.parse(xmlContent);
-
+			String cleanXML = xmlContent.replaceAll("(?s)<galley locale=\"pt_BR\"[^>]*>.*?</galley>", "");
+			
+			Document doc = Jsoup.parse(cleanXML);
 			String content = doc.getElementsByTag("article").toString();
 
 			// removes 'galley' element
-			int pos = content.indexOf("<galley");
-
-			if (pos > 0) {
-				String trash = content.substring(pos);
-				content = content.replace(trash, "</article>");
-			}
-
+			// ERROR: Was only removing the first occurrence.
+			// Substituted by the line above.
+			/*
+			int begTrashPos = content.indexOf("<galley");
+			int endTrashPos = content.indexOf("</galley>");
+			
+			if (begTrashPos > 0) {
+				// Beginning position so <galley locale="pt_br"> is excluded. 
+				String trash = content.substring(begTrashPos, endTrashPos+9);
+				content = content.replace(trash, "");
+			} */
+			
 			JSONObject json = XML.toJSONObject(content);
-
 			return json.toString();
 
 		} catch (Exception e) {
@@ -57,28 +74,38 @@ public class Converter {
 
 	}
 
-	public void processData(String inputDir, String outputDir) {
+	/**
+	 * 
+	 * @param inputDir
+	 * @param outputDir
+	 */
+	public void processData(String inputDir, String outputDir, String outputFileName) {
 
-		// input directory
+		// Check input directory
 		File inDir = new File(inputDir);
-		if (!inDir.exists())
+		if (!inDir.exists()) {
 			System.err.println("Input directory not found!");
-
-		// output directory
+			System.exit(-1);
+		}
+		// Check output directory
 		File outDir = new File(outputDir);
-		if (!outDir.exists())
+		if (!outDir.exists()) {
 			outDir.mkdirs();
-
+		}
+		
 		// Output JSON file
-		File jsonMaster = new File(outDir.getPath() + "/RBIE_PAPERS_JSON");
+		File jsonMaster = new File(outDir.getPath() + "/" + outputFileName);
 
 		try {
 			FileWriter fw = new FileWriter(jsonMaster);
-
+			
 			fw.write("{\"papers\":[");
 
 			for (File file : inDir.listFiles()) {
-				fw.write(convert(loadFile(file)) + ",");
+					if (file.toString().contains(".xml")) {
+						fw.write(convert(loadFile(file)) + ",");
+						//a++;
+					}
 			}
 
 			fw.write("]}");
@@ -86,6 +113,7 @@ public class Converter {
 			fw.close();
 		} catch (IOException e) {
 			e.printStackTrace();
+			return;
 		}
 
 	}
