@@ -16,26 +16,29 @@ public class NamesRetrieval {
 	private List<String> getAuthorList(String data) {
 		List<String> names = new ArrayList<String>();
 		JSONObject json = new JSONObject(data);
-		
+
 		for (Object obj : json.getJSONArray("papers")) {
 			JSONObject paper = (JSONObject) obj;
-			
-			//TODO issue appears to be in here
-			try {				
-				for (Object art: paper.getJSONArray("article")) {
+
+			// TODO issue appears to be in here
+			try {
+				for (Object art : paper.getJSONArray("article")) {
 					JSONObject article = (JSONObject) art;
-					
-					if (article.get("author") instanceof JSONObject) {
-						JSONObject author = ((JSONObject) article.get("author"));
-						names.add(joinNames(author));
-					} else {
-						JSONArray coAuthors = ((JSONArray) article.get("author"));
-						
-						for (Object object : coAuthors) {
-							JSONObject author = (JSONObject) object;
+
+					if (article.has("author")) {
+						if (article.get("author") instanceof JSONObject) {
+							JSONObject author = ((JSONObject) article.get("author"));
 							names.add(joinNames(author));
+						} else {
+							JSONArray coAuthors = ((JSONArray) article.get("author"));
+
+							for (Object object : coAuthors) {
+								JSONObject author = (JSONObject) object;
+								names.add(joinNames(author));
+							}
 						}
 					}
+
 				}
 			} catch (Exception e) {
 				System.err.println(e.getMessage());
@@ -50,7 +53,7 @@ public class NamesRetrieval {
 		Set<String> set = new LinkedHashSet<String>(names);
 		names.clear();
 		names.addAll(set);
-		
+
 		try {
 			FileWriter fw = new FileWriter(new File(filename));
 			for (String name : names)

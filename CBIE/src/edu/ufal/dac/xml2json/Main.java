@@ -20,6 +20,6 @@ public class Main {
 		//converter.processData(INPUT_DIRECTORY, OUTPUT_DIRECTORY, OUTPUT_FILE);
 
 		// Gets a list containing authors' names
-		new NamesRetrieval().processNames(converter.loadFile(new File("data/output/CBIE_PAPERS_FIXED.JSON")), OUTPUT_DIRECTORY + OUTPUT_NAMES);
+		new NamesRetrieval().processNames(converter.loadFile(new File("data/output/CBIE_PAPERS_FIXED.json")), OUTPUT_DIRECTORY + OUTPUT_NAMES);
 	}	
 }

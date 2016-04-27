@@ -101,10 +101,10 @@ public class Converter {
 			
 			fw.write("{\"papers\":[");
 
-			for (File file : inDir.listFiles()) {
+			for (int i=0; i<inDir.listFiles().length; i++) {
+				File file = inDir.listFiles()[i];
 					if (file.toString().contains(".xml")) {
 						fw.write(convert(loadFile(file)) + ",");
-						//a++;
 					}
 			}
 
