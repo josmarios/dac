@@ -1,19 +1,23 @@
 package edu.ufal.dac.scraper;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Main {
 
-	private static final String SEARCH_ENGINE = "http://search.yahoo.com/search?p=";
 
 	// File containing a list of authors from RBIE
-	private static final String INPUT_FILE = "/home/josmario/AUTHORS_GOOGLE.in";
+	private static final String INPUT_FILE = "data/list1.csv";
 
 	// JSON file to place extracted data from Researchgate
-	private static final String OUTPUT = "/home/josmario/AUTHORS_GOOGLE.out";
+	private static final String OUTPUT = "data/AUTHORS_GOOGLE.out";
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) throws IOException {
+
 		PageScraper ps = new PageScraper();
-		
-		ps.processData(SEARCH_ENGINE, INPUT_FILE, OUTPUT);
+		ps.processData(INPUT_FILE, OUTPUT);
 	}
 }
