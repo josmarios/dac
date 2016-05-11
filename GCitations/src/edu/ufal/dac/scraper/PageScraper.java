@@ -18,6 +18,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
+import java.util.Random;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -28,48 +29,50 @@ import org.jsoup.nodes.Element;
 import com.google.gson.Gson;
 
 public class PageScraper {
+	private String[] userAgents;
+	private String profileNotFoundExceptionMessage = "Profile Not Found";
+	private String blockedByServerExceptionMessage = "Blocked By Server";
 
+	public PageScraper() {
+		userAgents = new String[]{"Mozilla/6.0 (Windows NT 6.2; WOW64; rv:16.0.1) Gecko/20121011 Firefox/16.0.1", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2", "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_7; ja-jp) AppleWebKit/533.20.25 (KHTML, like Gecko) Version/5.0.4 Safari/533.20.27", "Opera/9.80 (X11; Linux i686; Ubuntu/14.10) Presto/2.12.388 Version/12.16"};
+	}
 	/**
 	 * Gets a HTML page given its URL.
 	 *
 	 * @param pageUrl
 	 *            Link to the page.
 	 * @return Returns the page content (HTML format)
-	 * @throws IOException
+	 * @throws Exception
 	 */
-	public String getPageContent(String pageUrl) throws IOException {
+	public String getPageContent(String pageUrl, int timeoutErrorCode) throws Exception {
 		String content = "";
-		try {
-			Thread.sleep(1000);
+		String userAgent = userAgents[new Random().nextInt(userAgents.length)];
+
+		// Wasn't making a difference, so the wait period was commented out:
+		/*try {
+			Thread.sleep(500);
 		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}
-		try {
+		}*/
 
-			if (pageUrl.contains("http")) {
+		if (pageUrl.contains("http")) {
 
-				URL url = new URL(pageUrl);
-				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-				connection.setRequestMethod("GET");
-				connection.setRequestProperty("User-Agent", "Firefox/30.0");
+			URL url = new URL(pageUrl);
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+			connection.setRequestMethod("GET");
+			connection.setRequestProperty("User-Agent", userAgent);
 
-
-				if (connection.getResponseCode() == 403) {
-					System.err.println("Blocked by server!");
-					System.exit(-1);
-				}
-				BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-
-				String line;
-				while ((line = br.readLine()) != null)
-					content += line + "\n";
-
-				br.close();
+			if (connection.getResponseCode() == timeoutErrorCode) {
+				throw new Exception(blockedByServerExceptionMessage);
 			}
 
-		} catch (Exception e) {
-			e.printStackTrace();
+			BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			String line;
+
+			while ((line = br.readLine()) != null)
+				content += line + "\n";
+
+			br.close();
 		}
 
 		return content;
@@ -77,6 +80,7 @@ public class PageScraper {
 
 	/**
 	 * Locates a profile URL inside a specific HTML page.
+	 * Warning: returns first result found. If there are two authors with similar names, the first one on the page ranking will be returned.
 	 *
 	 * @param page
 	 *            A HTML page containing the URL on it.
@@ -84,7 +88,6 @@ public class PageScraper {
 	 * @throws Exception
 	 */
 	public String getProfileUrl(String page) throws Exception {
-
 		String userId = "";
 		Document doc = Jsoup.parse(page);
 		String url;
@@ -105,7 +108,7 @@ public class PageScraper {
 		}
 
 		if (foundUrl == false) {
-			throw new Exception("Profile Not Found");
+			throw new Exception(profileNotFoundExceptionMessage);
 		}
 
 		return profileUrl + userId;
@@ -122,9 +125,7 @@ public class PageScraper {
 		String profile = "";
 		query = query.replace(" ", "+");
 		String search = searchEngine + "google+scholar+" + query;
-		String profileUrl = null;
-
-		profileUrl = getProfileUrl(getPageContent(search));
+		String profileUrl = getProfileUrl(getPageContent(search, 403));
 		return profileUrl;
 	}
 
@@ -132,22 +133,19 @@ public class PageScraper {
 	 * Search for profile using Duck Duck Go
 	 * Problems:
 	 * 1) Being blocked by server if using searchURL
-	 * 2) URL from results are hidden if using searchURL2
+	 * 2) URL from results are hidden if using searchURL2 (api)
 	 * @param authorName
 	 * @return
+	 * @throws Exception
+	 * @throws
 	 */
-	private String searchProfileDuckDuckGo(String authorName) {
+	private String searchProfileDuckDuckGo(String authorName) throws Exception {
 		authorName = authorName.replace(" ", "+");
 
 		String searchURL = "https://duckduckgo.com/html/?q=%22" + authorName + "+-+google+scholar+citations%22";
 		//String searchURL2 = "https://api.duckduckgo.com/?q=%22" + authorName + "+-+google+scholar+citations%22";
 
-		String profileUrl = null;
-		try {
-			profileUrl = getProfileUrl(getPageContent(searchURL));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		String profileUrl = getProfileUrl(getPageContent(searchURL, 403));
 		System.out.println("URL for " + authorName + ": " + profileUrl);
 
 		return profileUrl;
@@ -158,20 +156,14 @@ public class PageScraper {
 	 * Problem: being blocked by server.
 	 * @param authorName
 	 * @return
+	 * @throws Exception
+	 * @throws IOException
 	 */
-	private String searchProfileGCitations(String authorName) {
-
+	private String searchProfileGCitations(String authorName) throws Exception {
 		authorName = authorName.replace(" ", "+");
 		String searchURL = "https://scholar.google.com.br/citations?mauthors=" + authorName + "&hl=pt-BR&view_op=search_authors";
-
-		String profileUrl = null;
-		try {
-			profileUrl = getProfileUrl(getPageContent(searchURL));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		String profileUrl = getProfileUrl(getPageContent(searchURL, 503));
 		System.out.println("URL for " + authorName + ": " + profileUrl);
-
 		return profileUrl;
 	}
 
@@ -273,22 +265,26 @@ public class PageScraper {
 			try {
 
 //				String profileURLToOutput = searchProfile("http://search.yahoo.com/search?p=", queryItems.get(i));
-//				String profileURLToOutput = searchProfileGCitations(queryItems.get(i));
+				String profileURLToOutput = searchProfileGCitations(queryItems.get(i));
 //				String profileURLToOutput = searchProfileDuckDuckGo(queryItems.get(i));
-				String profileURLToOutput = searchProfileBing(queryItems.get(i));
+//				String profileURLToOutput = searchProfileBing(queryItems.get(i));
 
 				fw.append(queryItems.get(i) + " " + profileURLToOutput + "\n");
 				removeLineFromFile(queryListFile, queryItems.get(i));
 			} catch (Exception e) {
-				System.err.println("Failed: " + queryItems.get(i));
-				try {
-					authorsWithoutURL.append(queryItems.get(i) + "\n");
-					removeLineFromFile(queryListFile, queryItems.get(i));
+				if (e.getLocalizedMessage() == blockedByServerExceptionMessage) {
+					System.err.println(blockedByServerExceptionMessage);
+					break;
+				} else if (e.getLocalizedMessage() == profileNotFoundExceptionMessage) {
+					System.err.println(profileNotFoundExceptionMessage + ": " + queryItems.get(i));
+					try {
+						authorsWithoutURL.append(queryItems.get(i) + "\n");
+						removeLineFromFile(queryListFile, queryItems.get(i));
 
-				} catch (IOException e1) {
-					e1.printStackTrace();
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
 				}
-				e.printStackTrace();
 				continue;
 			}
 		}
