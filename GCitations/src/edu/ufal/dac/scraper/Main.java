@@ -10,7 +10,7 @@ public class Main {
 
 
 	// File containing a list of authors from RBIE
-	private static final String INPUT_FILE = "data/pending_completelist.csv";
+	private static final String INPUT_FILE = "data/pending_rbiesbiewbie_clean_completelist.csv";
 
 	// JSON file to place extracted data from Researchgate
 	private static final String OUTPUT = "data/AUTHORS_GOOGLE.out";
