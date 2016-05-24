@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -14,27 +15,59 @@ import org.json.XML;
 public class Lattes {
 
 	public static void main(String[] args) {
+		
+		File pasta = new File("XML-Data/");
+		File[] array = pasta.listFiles();
+		
+		for(File f : array){
+			System.out.println(f.getPath());
+			
+			String input = f.getPath();
+			String[] s = f.getName().split("\\.");
+			
+			System.out.println(Arrays.asList(s));
+			String dest = "JSON-Data/"+s[0] + ".json";
+			
+			Lattes l = new Lattes();
+	
+			String json = l.generateJson(input);
+	
+			System.out.println(json);
+	
+			l.saveFile(json, dest);
+		}
+		
+//		for (int i = 0; i < array.length; i++) {
+//			System.out.println(array[i]);
+//			String input = array[i].getParent()+'/'+array[i].getName();
+//			String[] s = array[i].getName().split(".");
+//			
+//			System.out.println(Arrays.asList(s));
+//			String dest = array[i].getName().split(".")[0] + ".json";
+//			
+//			Lattes l = new Lattes();
+//	
+//			String json = l.generateJson(input);
+//	
+//			System.out.println(json);
+//	
+//			l.saveFile(json, dest);
+//		}
+		
 
-		String input = "curriculo.xml";
-		String dest = "curriculo.json";
 
-		Lattes l = new Lattes();
-
-		String json = l.generateJson(input);
-
-		System.out.println(json);
-
-		l.saveFile(json, dest);
 
 	}
 
 	private String generateJson(String fileName) {
-
+		
 		String content = "";
 		String output = "";
+		System.out.println(fileName);
 
 		try {
 			File file = new File(fileName);
+			System.out.println(file);
 			BufferedReader br = new BufferedReader(new FileReader(file));
 
 			String line;
