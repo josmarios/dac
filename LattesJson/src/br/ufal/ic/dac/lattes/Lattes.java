@@ -3,6 +3,7 @@ package br.ufal.ic.dac.lattes;
 import java.awt.dnd.Autoscroll;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,32 +11,58 @@ import java.util.Arrays;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.JSONString;
 import org.json.XML;
+import org.jsoup.Jsoup;
 
 public class Lattes {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		File pasta = new File("XML-Data/");
 		File[] array = pasta.listFiles();
+		File json2 = new File("XML-Data/ig.xml");
 		
+
+		
+		
+		
+		
+		
+		Lattes basicDataGeneral = new Lattes();
+		JSONObject jsonBasicDataGeneral = new JSONObject();
+		JSONArray jsonArrayBasicDataGeneral = new JSONArray();
 		for(File f : array){
-			System.out.println(f.getPath());
+			String content = "";
+			BufferedReader br = new BufferedReader(new FileReader(f));
+
+			String line;
+			
+			while ((line = br.readLine()) != null)
+				content += line;
+			br.close();
+			JSONObject json3 =  XML.toJSONObject(content);
+			
+			
+			jsonArrayBasicDataGeneral.put(new JSONObject(basicDataGeneral.generateJsonBasicData(json3)));
 			
 			String input = f.getPath();
 			String[] s = f.getName().split("\\.");
 			
-			System.out.println(Arrays.asList(s));
+			
 			String dest = "JSON-Data/"+s[0] + ".json";
 			
 			Lattes l = new Lattes();
 	
 			String json = l.generateJson(input);
 	
-			System.out.println(json);
+		
 	
 			l.saveFile(json, dest);
 		}
+		jsonBasicDataGeneral.put("DADOS-GERAIS", jsonArrayBasicDataGeneral);
+		System.out.println(jsonBasicDataGeneral);
+		basicDataGeneral.saveFile(jsonBasicDataGeneral.toString(), "ig.json");
 		
 //		for (int i = 0; i < array.length; i++) {
 //			System.out.println(array[i]);
@@ -58,7 +85,17 @@ public class Lattes {
 
 
 	}
-
+	private String generateJsonBasicData(JSONObject json){
+		JSONObject jsonOutput = new JSONObject();
+		jsonOutput.put("NOME-EM-CITACOES-BIBLIOGRAFICAS", json.getJSONObject("CURRICULO-VITAE").getJSONObject("DADOS-GERAIS").get("NOME-EM-CITACOES-BIBLIOGRAFICAS"));
+		jsonOutput.put("URI","HTTP://WWW.IC.UFAL.BR/DAC/AUTHOR/LATTES/"+ json.getJSONObject("CURRICULO-VITAE").get("NUMERO-IDENTIFICADOR"));
+		jsonOutput.put("NOME-COMPLETO", json.getJSONObject("CURRICULO-VITAE").getJSONObject("DADOS-GERAIS").get("NOME-COMPLETO"));
+		jsonOutput.put("PAIS-DE-NASCIMENTO", json.getJSONObject("CURRICULO-VITAE").getJSONObject("DADOS-GERAIS").get("PAIS-DE-NASCIMENTO"));
+		jsonOutput.put("ENDERECO", json.getJSONObject("CURRICULO-VITAE").getJSONObject("DADOS-GERAIS").getJSONObject("ENDERECO").get("ENDERECO-PROFISSIONAL"));
+		jsonOutput.put("DATA-ATUALIZACAO", json.getJSONObject("CURRICULO-VITAE").get("DATA-ATUALIZACAO"));
+		
+		return jsonOutput.toString(1);
+	}
 	private String generateJson(String fileName) {
 		
 		String content = "";
@@ -83,7 +120,7 @@ public class Lattes {
 			// xmlJSONObj.remove("CURRICULO-VITAE");
 
 			// json.getJSONObject("CURRICULO-VITAE").getJSONObject("PRODUCAO-BIBLIOGRAFICA").remove("TRABALHOS-EM-EVENTOS");
-
+			
 			json.getJSONObject("CURRICULO-VITAE").remove("SISTEMA-ORIGEM-XML");
 			json.getJSONObject("CURRICULO-VITAE").remove("HORA-ATUALIZACAO");
 
