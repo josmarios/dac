@@ -9,7 +9,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 
+import javax.naming.CommunicationException;
+
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONString;
 import org.json.XML;
@@ -20,18 +23,13 @@ public class Lattes {
 	public static void main(String[] args) throws IOException {
 		
 		File pasta = new File("XML-Data/");
-		File[] array = pasta.listFiles();
-		
-		
-
-		
-		
-		
-		
+		File[] array = pasta.listFiles();		
 		
 		Lattes basicDataGeneral = new Lattes();
 		JSONObject jsonBasicDataGeneral = new JSONObject();
 		JSONArray jsonArrayBasicDataGeneral = new JSONArray();
+		JSONArray jsonArrayTrabalhos = new JSONArray();
+		JSONObject jsonTrabalhos = new JSONObject();
 		for(File f : array){
 			String content = "";
 			BufferedReader br = new BufferedReader(new FileReader(f));
@@ -44,12 +42,15 @@ public class Lattes {
 			JSONObject json =  XML.toJSONObject(content);
 			
 			
-			jsonArrayBasicDataGeneral.put(new JSONObject(basicDataGeneral.generateJsonBasicData(json)));
+			jsonArrayBasicDataGeneral.put(basicDataGeneral.generateJsonBasicData(json));
+			
+			jsonArrayTrabalhos = basicDataGeneral.concatArray(basicDataGeneral.generateJsonArrayTrabalhosEventos(json), jsonArrayTrabalhos);
 			
 
 		}
 		jsonBasicDataGeneral.put("DADOS-GERAIS", jsonArrayBasicDataGeneral);
-		
+		jsonTrabalhos.put("Trabalhos-em-eventos", jsonArrayTrabalhos);
+		basicDataGeneral.saveFile(jsonTrabalhos.toString(), "TrabalhosEmEventos.json");
 		basicDataGeneral.saveFile(jsonBasicDataGeneral.toString(), "basicDataGeneral.json");
 		
 
@@ -57,7 +58,18 @@ public class Lattes {
 
 
 	}
-	private String generateJsonBasicData(JSONObject json){
+	private JSONArray concatArray(JSONArray arr1, JSONArray arr2)
+	        throws JSONException {
+	    JSONArray result = new JSONArray();
+	    for (int i = 0; i < arr1.length(); i++) {
+	        result.put(arr1.get(i));
+	    }
+	    for (int i = 0; i < arr2.length(); i++) {
+	        result.put(arr2.get(i));
+	    }
+	    return result;
+	}
+	private JSONObject generateJsonBasicData(JSONObject json){
 		JSONObject jsonOutput = new JSONObject();
 		try {
 			jsonOutput.put("NOME-EM-CITACOES-BIBLIOGRAFICAS", json.getJSONObject("CURRICULO-VITAE").getJSONObject("DADOS-GERAIS").get("NOME-EM-CITACOES-BIBLIOGRAFICAS"));
@@ -71,7 +83,29 @@ public class Lattes {
 		}
 		
 		
-		return jsonOutput.toString(1);
+		return jsonOutput;
+	}
+	
+	private JSONArray generateJsonArrayTrabalhosEventos(JSONObject json){
+		JSONArray jsonOutput = new JSONArray();
+		
+		try {
+			
+			JSONArray jsonTrabalhos = json.getJSONObject("CURRICULO-VITAE").getJSONObject("PRODUCAO-BIBLIOGRAFICA").getJSONObject("TRABALHOS-EM-EVENTOS").getJSONArray("TRABALHO-EM-EVENTOS");
+			
+			for (int i = 0; i < jsonTrabalhos.length(); i++) {
+				JSONObject aux = (JSONObject) jsonTrabalhos.get(i);
+				aux.put("URI","http://www.ic.ufal.br/dac/author/lattes/"+ json.getJSONObject("CURRICULO-VITAE").get("NUMERO-IDENTIFICADOR") );
+				jsonTrabalhos.remove(i);
+				jsonTrabalhos.put(i, aux);
+			}
+			jsonOutput = jsonTrabalhos;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		
+		return jsonOutput;
 	}
 	private String generateJson(String fileName) {
 		
@@ -684,7 +718,7 @@ public class Lattes {
 	}
 
 	private void saveFile(String data, String fileName) {
-		File dest = new File(fileName);
+		
 		FileWriter fw;
 		try {
 			fw = new FileWriter(new File(fileName));
