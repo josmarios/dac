@@ -37,61 +37,40 @@ public class Lattes {
 		File pasta = new File("XML-Data/");
 		File[] array = pasta.listFiles();		
 		
-//		Lattes basicDataGeneral = new Lattes();
+		Lattes l = new Lattes();
 //		JSONObject jsonBasicDataGeneral = new JSONObject();
 //		JSONArray jsonArrayBasicDataGeneral = new JSONArray();
 //		JSONArray jsonArrayTrabalhos = new JSONArray();
 //		JSONObject jsonTrabalhos = new JSONObject();
-		
+		JSONObject jsonJornaisouRevistas = new JSONObject();
+		JSONArray jsonArrayJornaisouRevistas = new JSONArray();
 		for(File f : array){
-			//InputStream in =  new FileInputStream(f);
-		  // Object xml = new XMLDecoder(in);
-//			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-//			DocumentBuilder dBuilder = null;
-//			try {
-//				dBuilder = dbFactory.newDocumentBuilder();
-//			} catch (ParserConfigurationException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			try {
-//				Document doc = dBuilder.parse(f);
-//				doc.getDocumentElement().normalize();
-//			//	doc.getDocumentElement().
-//				
-//			} catch (SAXException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			
+			
 			
 			String content = "";
-			//BufferedReader br = new BufferedReader(new FileReader(f));
+			
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f),"ISO-8859-1"));
 
 			String line;
 			
 			while ((line = br.readLine()) != null){
 				 
-//				byte[] b = line.getBytes("ISO-8859-15");
 //				
-//				content += new String(b, "ISO-8859-15");
-				
-				
-				//byte[] b = br.readLine().getBytes("ISO-8859-15");
 				
 				content += line;
 				
-				break;
 			}
 			
 			br.close();
 			try {
 				JSONObject json =  XML.toJSONObject(content);			
 //				
-//				jsonArrayBasicDataGeneral.put(basicDataGeneral.generateJsonBasicData(json));
+//				jsonArrayBasicDataGeneral.put(l.generateJsonBasicData(json));
 //				
-//				jsonArrayTrabalhos = basicDataGeneral.concatArray(basicDataGeneral.generateJsonArrayTrabalhosEventos(json), jsonArrayTrabalhos);
+//				jsonArrayTrabalhos = l.concatArray(l.generateJsonArrayTrabalhosEventos(json), jsonArrayTrabalhos);
+				JSONObject jornaisOuRevistas = l.generateJsonArrayJornaisOuRevistas(json);
+				if(jornaisOuRevistas.length() != 0 )
+				jsonArrayJornaisouRevistas.put(l.generateJsonArrayJornaisOuRevistas(json));
 //				
 				
 			} catch (Exception e) {
@@ -102,8 +81,11 @@ public class Lattes {
 		}
 //		jsonBasicDataGeneral.put("DADOS-GERAIS", jsonArrayBasicDataGeneral);
 //		jsonTrabalhos.put("Trabalhos-em-eventos", jsonArrayTrabalhos);
-//		basicDataGeneral.saveFile(jsonTrabalhos.toString(), "TrabalhosEmEventos.json");
-//		basicDataGeneral.saveFile(jsonBasicDataGeneral.toString(), "basicDataGeneral.json");
+//		l.saveFile(jsonTrabalhos.toString(), "TrabalhosEmEventos.json");
+//		l.saveFile(jsonBasicDataGeneral.toString(), "basicDataGeneral.json");
+		jsonJornaisouRevistas.put("JORNAIS-OU-REVISTAS", jsonArrayJornaisouRevistas);
+		System.out.println(jsonArrayJornaisouRevistas.length());
+		l.saveFile(jsonJornaisouRevistas.toString(), "JornaisOuRevistas.json");
 		
 
 
@@ -159,6 +141,33 @@ public class Lattes {
 		
 		return jsonOutput;
 	}
+	
+	private JSONObject generateJsonArrayJornaisOuRevistas(JSONObject json){
+		JSONObject jsonOutput = new JSONObject();
+		
+		try {
+			//System.out.println(json.getJSONObject("CURRICULO-VITAE").getJSONObject("PRODUCAO-BIBLIOGRAFICA").getJSONObject("TEXTOS-EM-JORNAIS-OU-REVISTAS"));
+			JSONObject jsonTrabalhos = new JSONObject();
+			jsonTrabalhos.put("Author-URI","http://www.ic.ufal.br/dac/author/lattes/"+ json.getJSONObject("CURRICULO-VITAE").get("NUMERO-IDENTIFICADOR") );
+			jsonTrabalhos.put("Object", json.getJSONObject("CURRICULO-VITAE").getJSONObject("PRODUCAO-BIBLIOGRAFICA").getJSONObject("TEXTOS-EM-JORNAIS-OU-REVISTAS").getJSONObject("TEXTO-EM-JORNAL-OU-REVISTA"));
+			//jsonTrabalhos.put("URI","http://www.ic.ufal.br/dac/author/lattes/"+ json.getJSONObject("CURRICULO-VITAE").get("NUMERO-IDENTIFICADOR") );
+			System.out.println(jsonTrabalhos);
+//			for (int i = 0; i < jsonTrabalhos.length(); i++) {
+//				JSONObject aux = (JSONObject) jsonTrabalhos.get(i);
+//				aux.put("URI","http://www.ic.ufal.br/dac/author/lattes/"+ json.getJSONObject("CURRICULO-VITAE").get("NUMERO-IDENTIFICADOR") );
+//				jsonTrabalhos.remove(i);
+//				jsonTrabalhos.put(i, aux);
+//			}
+			jsonOutput = jsonTrabalhos;
+		} catch (Exception e) {
+			//System.out.println(e);
+			// TODO: handle exception
+		}
+		
+		
+		return jsonOutput;
+	}
+	
 	private String generateJson(String fileName) {
 		
 		String content = "";
