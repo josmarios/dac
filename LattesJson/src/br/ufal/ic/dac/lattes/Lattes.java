@@ -1,22 +1,34 @@
 package br.ufal.ic.dac.lattes;
 
 import java.awt.dnd.Autoscroll;
+import java.beans.XMLDecoder;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.nio.charset.Charset;
 import java.util.Arrays;
 
 import javax.naming.CommunicationException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONString;
 import org.json.XML;
-import org.jsoup.Jsoup;
+import org.jsoup.Jsoup;import org.jsoup.select.Evaluator.IsEmpty;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 public class Lattes {
 
@@ -25,33 +37,73 @@ public class Lattes {
 		File pasta = new File("XML-Data/");
 		File[] array = pasta.listFiles();		
 		
-		Lattes basicDataGeneral = new Lattes();
-		JSONObject jsonBasicDataGeneral = new JSONObject();
-		JSONArray jsonArrayBasicDataGeneral = new JSONArray();
-		JSONArray jsonArrayTrabalhos = new JSONArray();
-		JSONObject jsonTrabalhos = new JSONObject();
+//		Lattes basicDataGeneral = new Lattes();
+//		JSONObject jsonBasicDataGeneral = new JSONObject();
+//		JSONArray jsonArrayBasicDataGeneral = new JSONArray();
+//		JSONArray jsonArrayTrabalhos = new JSONArray();
+//		JSONObject jsonTrabalhos = new JSONObject();
+		
 		for(File f : array){
+			//InputStream in =  new FileInputStream(f);
+		  // Object xml = new XMLDecoder(in);
+//			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+//			DocumentBuilder dBuilder = null;
+//			try {
+//				dBuilder = dbFactory.newDocumentBuilder();
+//			} catch (ParserConfigurationException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			try {
+//				Document doc = dBuilder.parse(f);
+//				doc.getDocumentElement().normalize();
+//			//	doc.getDocumentElement().
+//				
+//			} catch (SAXException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+			
 			String content = "";
-			BufferedReader br = new BufferedReader(new FileReader(f));
+			//BufferedReader br = new BufferedReader(new FileReader(f));
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f),"ISO-8859-1"));
 
 			String line;
 			
-			while ((line = br.readLine()) != null)
+			while ((line = br.readLine()) != null){
+				 
+//				byte[] b = line.getBytes("ISO-8859-15");
+//				
+//				content += new String(b, "ISO-8859-15");
+				
+				
+				//byte[] b = br.readLine().getBytes("ISO-8859-15");
+				
 				content += line;
+				
+				break;
+			}
+			
 			br.close();
-			JSONObject json =  XML.toJSONObject(content);
+			try {
+				JSONObject json =  XML.toJSONObject(content);			
+//				
+//				jsonArrayBasicDataGeneral.put(basicDataGeneral.generateJsonBasicData(json));
+//				
+//				jsonArrayTrabalhos = basicDataGeneral.concatArray(basicDataGeneral.generateJsonArrayTrabalhosEventos(json), jsonArrayTrabalhos);
+//				
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 			
 			
-			jsonArrayBasicDataGeneral.put(basicDataGeneral.generateJsonBasicData(json));
-			
-			jsonArrayTrabalhos = basicDataGeneral.concatArray(basicDataGeneral.generateJsonArrayTrabalhosEventos(json), jsonArrayTrabalhos);
-			
-
 		}
-		jsonBasicDataGeneral.put("DADOS-GERAIS", jsonArrayBasicDataGeneral);
-		jsonTrabalhos.put("Trabalhos-em-eventos", jsonArrayTrabalhos);
-		basicDataGeneral.saveFile(jsonTrabalhos.toString(), "TrabalhosEmEventos.json");
-		basicDataGeneral.saveFile(jsonBasicDataGeneral.toString(), "basicDataGeneral.json");
+//		jsonBasicDataGeneral.put("DADOS-GERAIS", jsonArrayBasicDataGeneral);
+//		jsonTrabalhos.put("Trabalhos-em-eventos", jsonArrayTrabalhos);
+//		basicDataGeneral.saveFile(jsonTrabalhos.toString(), "TrabalhosEmEventos.json");
+//		basicDataGeneral.saveFile(jsonBasicDataGeneral.toString(), "basicDataGeneral.json");
 		
 
 
