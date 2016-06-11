@@ -1,4 +1,4 @@
-package br.ufal.ic.dac.lattes;
+package org.w3.xslt;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
