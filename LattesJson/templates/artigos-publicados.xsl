@@ -17,7 +17,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 				<LOCAL><xsl:value-of select="DETALHAMENTO-DO-ARTIGO/@LOCAL-DE-PUBLICACAO"/></LOCAL>
 				<AUTORES>
 					<xsl:for-each select="AUTORES">
-						<AUTOR><xsl:value-of select="@NOME-COMPLETO-DO-AUTOR"/></AUTOR>
+							<AUTOR>
+							<NOME>
+								<xsl:value-of select="@NOME-COMPLETO-DO-AUTOR"/>
+							</NOME>
+							<ORDEM-AUTORIA>
+								<xsl:value-of select="@ORDEM-DE-AUTORIA"/>
+							</ORDEM-AUTORIA>
+						</AUTOR>
 					</xsl:for-each>
 				</AUTORES>
     			</ARTIGO>
