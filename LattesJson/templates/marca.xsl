@@ -20,7 +20,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 						<ORDEM-DE-AUTORIA><xsl:value-of select="@ORDEM-DE-AUTORIA"/></ORDEM-DE-AUTORIA>
 					</xsl:for-each>
 				</AUTORES>
-    			</LIVRO>
+    		</MARCA>
     	</xsl:for-each>
 	</MARCAS>
 </CURRICULO>
