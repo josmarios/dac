@@ -1,9 +1,9 @@
 package br.ufal.ic.dac.lattes;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -12,6 +12,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.apache.commons.io.FileUtils;
 import org.w3.xslt.XSLTransform;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -50,18 +51,24 @@ public class LattesXSL {
 		List<File> curriculums = Arrays.asList(source.listFiles());
 
 		System.out.println("Extracting data...");
-		for (File curriculum : curriculums) {
-			try {
+
+		try {
+			for (File curriculum : curriculums) {
+
 				XSLTransform.transform(curriculum.getAbsolutePath(), XSL_DIR + type + ".xsl",
 						TEMP_DIR + type + "-" + curriculum.getName());
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
 
-		// merge all files
-		System.out.println("Merging files...");
-		mergeFiles(type, Arrays.asList(temp.listFiles()));
+			}
+
+			// merges all files
+			System.out.println("Merging files...");
+			mergeFiles(type, Arrays.asList(temp.listFiles()));
+
+			// deletes TEMP directory
+			FileUtils.deleteDirectory(temp);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		System.out.println("Done!");
 	}
