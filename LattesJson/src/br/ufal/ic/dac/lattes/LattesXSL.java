@@ -50,7 +50,7 @@ public class LattesXSL {
 		// Lists all curriculums
 		List<File> curriculums = Arrays.asList(source.listFiles());
 
-		System.out.println("Extracting data...");
+		System.out.println("Extracting data: " + type);
 
 		try {
 			for (File curriculum : curriculums) {
@@ -61,7 +61,7 @@ public class LattesXSL {
 			}
 
 			// merges all files
-			System.out.println("Merging files...");
+			System.out.println("Merging files: " + type);
 			mergeFiles(type, Arrays.asList(temp.listFiles()));
 
 			// deletes TEMP directory
@@ -70,7 +70,7 @@ public class LattesXSL {
 			e.printStackTrace();
 		}
 
-		System.out.println("Done!");
+		System.out.println(type + " done!");
 	}
 
 	private void mergeFiles(String type, List<File> files) {
