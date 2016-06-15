@@ -10,7 +10,7 @@ public class LattesManager {
 		// "orientacoes-em-andamento",
 		// "outras-orientacoes-concluidas", "software" };
 
-		String[] input = { "orientacoes-em-andamento", "marca" };
+		String[] input = { "outras-orientacoes-concluidas" };
 
 		for (String category : input) {
 			LattesXSL.getInstance().processXml(category);
