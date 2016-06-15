@@ -90,6 +90,8 @@ public class Lattes {
 
 		try {
 			new Lattes().processData("DADOS-GERAIS");
+			new Lattes().processData("JORNAIS-OU-REVISTAS");
+			new Lattes().processData("TRABALHOS-EM-EVENTOS");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -118,8 +120,14 @@ public class Lattes {
 					json.getJSONObject("CURRICULO-VITAE").getJSONObject("DADOS-GERAIS").get("NOME-COMPLETO"));
 			jsonOutput.put("PAIS-DE-NASCIMENTO",
 					json.getJSONObject("CURRICULO-VITAE").getJSONObject("DADOS-GERAIS").get("PAIS-DE-NASCIMENTO"));
-			jsonOutput.put("ENDERECO", json.getJSONObject("CURRICULO-VITAE").getJSONObject("DADOS-GERAIS")
-					.getJSONObject("ENDERECO").get("ENDERECO-PROFISSIONAL"));
+			try {
+				jsonOutput.put("ENDERECO", json.getJSONObject("CURRICULO-VITAE").getJSONObject("DADOS-GERAIS")
+						.getJSONObject("ENDERECO").get("ENDERECO-PROFISSIONAL"));
+				
+			} catch (Exception e) {
+				System.out.println(e);
+				// TODO: handle exception
+			};																										
 			jsonOutput.put("DATA-ATUALIZACAO", json.getJSONObject("CURRICULO-VITAE").get("DATA-ATUALIZACAO"));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -159,9 +167,13 @@ public class Lattes {
 
 			jsonTrabalhos.put("Author-URI", "http://www.ic.ufal.br/dac/author/lattes/"
 					+ json.getJSONObject("CURRICULO-VITAE").get("NUMERO-IDENTIFICADOR"));
-
-			jsonTrabalhos.put("Object", json.getJSONObject("CURRICULO-VITAE").getJSONObject("PRODUCAO-BIBLIOGRAFICA")
-					.getJSONObject("TEXTOS-EM-JORNAIS-OU-REVISTAS").getJSONObject("TEXTO-EM-JORNAL-OU-REVISTA"));
+			try {
+				jsonTrabalhos.put("Object", json.getJSONObject("CURRICULO-VITAE").getJSONObject("PRODUCAO-BIBLIOGRAFICA")
+						.getJSONObject("TEXTOS-EM-JORNAIS-OU-REVISTAS").getJSONObject("TEXTO-EM-JORNAL-OU-REVISTA"));
+			} catch (Exception e) {
+				e.getMessage();
+			}
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
