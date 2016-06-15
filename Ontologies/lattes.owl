@@ -1,372 +1,72 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE Ontology [
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33"
+     xml:base="http://www.ic.ufal.br/lattes/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33">
-    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+     ontologyIRI="http://www.ic.ufal.br/lattes/">
+    <Prefix name="" IRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-<!--    <Import>file:/home/armando/Programas/workspaces/protege/lattes/swrc_v0.3.owl</Import>
-    <Import>http://nees.com.br/boa-moradia/crawler/Locality.owl</Import>-->
-
     <Import>http://ebiquity.umbc.edu/ontology/publication.owl#publication</Import>
     <Import>http://xmlns.com/foaf/0.1/</Import>
-    <Declaration>
-        <Class IRI="#AcademicDegree"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AcamdicMsc"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AcceptedArticle"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AdditionalTraining"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Address"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AdviceOrConsultancy"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Afterword"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Annals"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Area"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ArtisticOrCulturalProduction"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#BasicEducation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#BasicFormation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#BibliographicalProduction"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#BornData"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Chapter"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Citations"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Course"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Courseware"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#DoctoralDegree"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Editing"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Foreword"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Formation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FreeTeaching"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Graduation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#HighArea"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#HighSchool"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#IdentityCard"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Improvement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#IndustrialDesign"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#IntegratedCircuit"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#IsiCitations"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#LatoSensu"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Magazine"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MastersDegree"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MedicResidency"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Music"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MusicalScore"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#NonAcademicDegree"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OtherArtisticalOrCulturalProductions"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OtherCitations"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OtherPublication"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OtherTechnicalPublication"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PaperPresentation"/>
-    </Declaration>
     <Declaration>
         <Class IRI="#Passport"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Patent"/>
+        <DataProperty IRI="#edition"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PerformingArts"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PostDoctoral"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ProcessOrTechnique"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Product"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Production"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ProfessionalAddress"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ProfessionalMsc"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ProfessionalTie"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PublishedArticle"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Publisher"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Records"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#RegisteredSoftware"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ResearchArea"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ResearchReport"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Researcher"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ResidentialAddress"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#School"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ScieloCitations"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ScopusCitations"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Section"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ShortCourse"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Software"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Specialization"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SponsoringInstitution"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#StrictoSensu"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SubArea"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Talk"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TechnicalCollege"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TechnicalProduction"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TechnicalWork"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TechnologicalExtension"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TradeMark"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Translation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#UnderGraduation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#UnregisteredSoftware"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#VisualArts"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#haCoSupervisor"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasAddress"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasAuthor"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasAuthorParticipation"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasCourse"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasInstitution"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasInstitutionUnit"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasInvolvedInstitutions"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasOperationArea"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasOrientation"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasProduction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasProfessionalAddress"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasProfessionalTiesWith"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasPromotingInstitution"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasResearchArea"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasResidentialAddress"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSection"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSponsoringInstitution"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSupervisor"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasTeam"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasTitular"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isPartOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isResearchReportOf"/>
+        <DataProperty IRI="#otherInformation"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#academicMscResearchersNumber"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#annalsTitle"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#authorOfReferenceWork"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#availability"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#awards"/>
+        <DataProperty IRI="#genuineTitle"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#bookType"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#bornDate"/>
+        <Class IRI="#IsiCitations"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#catalogNumber"/>
+        <DataProperty IRI="#year"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#chapterTitle"/>
+        <DataProperty IRI="#exclusiveDedication"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#citationName"/>
+        <DataProperty IRI="#itinerant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TradeMark"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RegisteredSoftware"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OtherCitations"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Annals"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInstitution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProfessionalMsc"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#programmingLanguage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#shortCourseLevel"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#city"/>
@@ -375,10 +75,289 @@
         <DataProperty IRI="#collegeResearchersNumber"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#country"/>
+        <Class IRI="#SponsoringInstitution"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#courseStatus"/>
+        <DataProperty IRI="#innovationPotential"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#eventName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#potential"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#place"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TechnicalWork"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#issueDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#instrumentalTraining"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasInnovationPotential"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#titleOfReferenceWork"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ResearchReport"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#projectName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#employment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProfessionalAddress"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Courseware"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TechnicalProduction"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#productionType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#startPage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#skinColor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OtherArtisticalOrCulturalProductions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#projectInnovationPotential"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Records"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TechnologicalExtension"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OtherPublication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Software"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasResearchArea"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#endDate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TechnicalCollege"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#order"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#doctoralResearchersNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#fascicle"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#yearOfReferenceWork"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ResearchArea"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSection"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#eventRange"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#disseminationMean"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DoctoralDegree"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#journalTitle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Magazine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AcceptedArticle"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#availability"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#citationName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#start"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#publicationDate"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasResidentialAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#researchersNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OtherTechnicalPublication"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#level"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AcademicDegree"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#top5"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#projectStatuts"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IndustrialDesign"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Music"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#referenceWork"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#sexualGender"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Product"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MedicResidency"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tieType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProfessionalTie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Chapter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StrictoSensu"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#awards"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SubArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnderGraduation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#englishDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VisualArts"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Improvement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isResearchReportOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#issnOrIsbn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Area"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#doi"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInstitutionUnit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#end"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTeam"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#projectCodeNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#finality"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#genuineLanguage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAuthor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighArea"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#role"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Production"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IntegratedCircuit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProduction"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#projectAmountFinanced"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSupervisor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ScieloCitations"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Editing"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#expirationDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#season"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Publisher"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#professionalMscResearchersNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOperationArea"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#haCoSupervisor"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#cpf"/>
@@ -387,232 +366,31 @@
         <DataProperty IRI="#current"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#description"/>
+        <Class IRI="#Patent"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#disseminationMean"/>
+        <DataProperty IRI="#country"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#doctoralResearchersNumber"/>
+        <ObjectProperty IRI="#hasSponsoringInstitution"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#doctoralType"/>
+        <Class IRI="#BasicFormation"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#doi"/>
+        <Class IRI="#Formation"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#duration"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#durationUnit"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#edition"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#educationAndCTPopularization"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#employment"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#end"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#endDate"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#endPage"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#englishDescription"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#englishProjectName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#englishTitle"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#eventName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#eventRange"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#exclusiveDedication"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#expirationDate"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#fascicle"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#finality"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#generalType"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#genuineLanguage"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#genuineTitle"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasInnovationPotential"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasPotential"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#innovationPotential"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#instrumentalTraining"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#issnOrIsbn"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#issueDate"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#issuingAgency"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#itinerant"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#journalTitle"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#language"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#level"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#month"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#nature"/>
+        <ObjectProperty IRI="#hasTitular"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#obtainingTitle"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#order"/>
+        <Class IRI="#BornData"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#organizer"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#originality"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#otherInformation"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#pageNumber"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#period"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#place"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#potential"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#productionType"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#professionalMscResearchersNumber"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#programmingLanguage"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#projectAmountFinanced"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#projectCodeNumber"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#projectInnovationPotential"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#projectName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#projectStatuts"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#projectType"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#publicationDate"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#publisher"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#referenceWork"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#registrationNumber"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#researchCompanyCooperationProject"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#researchersNumber"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#role"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#scholarship"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#season"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#sexualGender"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#shortCourseLevel"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#skinColor"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#specializationResearchersNumber"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#start"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#startDate"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#startPage"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#technicalResearchersNumber"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#tieType"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#titleOfReferenceWork"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#top5"/>
+        <Class IRI="#AdviceOrConsultancy"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#uf"/>
@@ -621,10 +399,325 @@
         <DataProperty IRI="#workload"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#year"/>
+        <Class IRI="#UnregisteredSoftware"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#yearOfReferenceWork"/>
+        <ObjectProperty IRI="#hasOrientation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#specializationResearchersNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ResidentialAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#catalogNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ScopusCitations"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProfessionalTiesWith"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Researcher"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPromotingInstitution"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#duration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProcessOrTechnique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Section"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#language"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShortCourse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IdentityCard"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#endPage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BasicEducation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#bornDate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#School"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#englishProjectName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#registrationNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAuthorParticipation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#courseStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MusicalScore"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#englishTitle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Translation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#durationUnit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#technicalResearchersNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Course"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#educationAndCTPopularization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProfessionalAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#chapterTitle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Graduation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInvolvedInstitutions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#authorOfReferenceWork"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Talk"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#organizer"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#researchCompanyCooperationProject"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#scholarship"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#annalsTitle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Citations"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Afterword"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtisticOrCulturalProduction"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#startDate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonAcademicDegree"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#pageNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FreeTeaching"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PerformingArts"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PaperPresentation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AcamdicMsc"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#issuingAgency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PublishedArticle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MastersDegree"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#publisher"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#generalType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#period"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#doctoralType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Specialization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BibliographicalProduction"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPotential"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LatoSensu"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#projectType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Foreword"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PostDoctoral"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AdditionalTraining"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#originality"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCourse"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#month"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Address"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighSchool"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://swrc.ontoware.org/ontology#publication"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://swrc.ontoware.org/ontology#year"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://swrc.ontoware.org/ontology#Report"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://swrc.ontoware.org/ontology#Department"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://swrc.ontoware.org/ontology#Article"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ebiquity.umbc.edu/ontology/person.owl#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://swrc.ontoware.org/ontology#InBook"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://swrc.ontoware.org/ontology#title"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://swrc.ontoware.org/ontology#series"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://swrc.ontoware.org/ontology#homepage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://swrc.ontoware.org/ontology#Event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://swrc.ontoware.org/ontology#InProceedings"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://swrc.ontoware.org/ontology#TechnicalReport"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://swrc.ontoware.org/ontology#keywords"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/dc/terms/Agent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://swrc.ontoware.org/ontology#volume"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://swrc.ontoware.org/ontology#name"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://swrc.ontoware.org/ontology#editor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://swrc.ontoware.org/ontology#type"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://swrc.ontoware.org/ontology#author"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://swrc.ontoware.org/ontology#pages"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://swrc.ontoware.org/ontology#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://nees.com.br/boa-moradia/crawler/Locality.owl#Address"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://swrc.ontoware.org/ontology#Project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://swrc.ontoware.org/ontology#Organization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://swrc.ontoware.org/ontology#Product"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://swrc.ontoware.org/ontology#publisher"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://swrc.ontoware.org/ontology#publishes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://swrc.ontoware.org/ontology#Misc"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://swrc.ontoware.org/ontology#Publication"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://swrc.ontoware.org/ontology#number"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://swrc.ontoware.org/ontology#date"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://swrc.ontoware.org/ontology#Book"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="http://ebiquity.umbc.edu/ontology/person.owl#Person"/>
@@ -2347,8 +2440,8 @@
     <DataPropertyRange>
         <DataProperty IRI="#availability"/>
         <DataOneOf>
-            <Literal datatypeIRI="&rdf;PlainLiteral">restricted</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">unrestricted</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">restricted</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">unrestricted</Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -2358,8 +2451,8 @@
     <DataPropertyRange>
         <DataProperty IRI="#bookType"/>
         <DataOneOf>
-            <Literal datatypeIRI="&rdf;PlainLiteral">organization of published work</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">published book</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">organization of published work</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">published book</Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -2389,9 +2482,9 @@
     <DataPropertyRange>
         <DataProperty IRI="#courseStatus"/>
         <DataOneOf>
-            <Literal datatypeIRI="&rdf;PlainLiteral">completed</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">incomplete</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">ongoing</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">completed</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">incomplete</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ongoing</Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -2409,22 +2502,22 @@
     <DataPropertyRange>
         <DataProperty IRI="#disseminationMean"/>
         <DataOneOf>
-            <Literal datatypeIRI="&rdf;PlainLiteral">digital media</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">hypertext</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">magnetic media</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">movie</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">other</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">printed</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">printed /and electronic media </Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">digital media</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">hypertext</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">magnetic media</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">movie</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">other</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">printed</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">printed /and electronic media </Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#doctoralType"/>
         <DataOneOf>
-            <Literal datatypeIRI="&rdf;PlainLiteral">co-supervision</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">co-supervision/sandwich</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">normal</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">sandwich</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">co-supervision</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">co-supervision/sandwich</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">normal</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">sandwich</Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -2474,10 +2567,10 @@
     <DataPropertyRange>
         <DataProperty IRI="#eventRange"/>
         <DataOneOf>
-            <Literal datatypeIRI="&rdf;PlainLiteral">international</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">local</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">national</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">regional</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">international</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">local</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">national</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">regional</Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -2499,8 +2592,8 @@
     <DataPropertyRange>
         <DataProperty IRI="#generalType"/>
         <DataOneOf>
-            <Literal datatypeIRI="&rdf;PlainLiteral">normal</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">sandwich</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">normal</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">sandwich</Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -2550,10 +2643,10 @@
     <DataPropertyRange>
         <DataProperty IRI="#level"/>
         <DataOneOf>
-            <Literal datatypeIRI="&rdf;PlainLiteral">mba</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">other</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">short course</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">university extension</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">mba</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">other</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">short course</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">university extension</Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -2615,18 +2708,18 @@
     <DataPropertyRange>
         <DataProperty IRI="#projectStatuts"/>
         <DataOneOf>
-            <Literal datatypeIRI="&rdf;PlainLiteral">completed</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">off</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">ongoing</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">completed</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">off</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ongoing</Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#projectType"/>
         <DataOneOf>
-            <Literal datatypeIRI="&rdf;PlainLiteral">extension</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">other</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">research</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">technological development</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">extension</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">other</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">research</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">technological development</Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -2664,27 +2757,27 @@
     <DataPropertyRange>
         <DataProperty IRI="#sexualGender"/>
         <DataOneOf>
-            <Literal datatypeIRI="&rdf;PlainLiteral">female</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">male</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">female</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">male</Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#shortCourseLevel"/>
         <DataOneOf>
-            <Literal datatypeIRI="&rdf;PlainLiteral">extension</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">improvement</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">other</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">specialization</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">extension</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">improvement</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">other</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">specialization</Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#skinColor"/>
         <DataOneOf>
-            <Literal datatypeIRI="&rdf;PlainLiteral">black</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">brown</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">indigenous</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">white</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">yellow</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">black</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">brown</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">indigenous</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">white</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">yellow</Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -2698,11 +2791,11 @@
     <DataPropertyRange>
         <DataProperty IRI="#tieType"/>
         <DataOneOf>
-            <Literal datatypeIRI="&rdf;PlainLiteral">CLT</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">colleger</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">government employee</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">other</Literal>
-            <Literal datatypeIRI="&rdf;PlainLiteral">visiting professor</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">CLT</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">colleger</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">government employee</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">other</Literal>
+            <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">visiting professor</Literal>
         </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -2741,5 +2834,5 @@
 
 
 
-<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
 

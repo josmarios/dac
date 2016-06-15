@@ -282,6 +282,10 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="http://www.w3.org/ns/dcat#CatalogRecord"/>
+        <Class IRI="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="http://xmlns.com/foaf/0.1/Agent"/>
         <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="#hasContribution"/>
