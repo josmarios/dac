@@ -127,10 +127,10 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="http://www.ic.ufal.br/dac/lattes/jornal/10">
-	<dcat:keyword>Computação Gráfica</dcat:keyword>
-	<dcat:keyword>Computação Móvel</dcat:keyword>
 	<rdf:type rdf:resource="http://www.ic.ufal.br/dac/Contribution"/>
 	<dc:title>Uma Introdução ao Mobile Java 3D</dc:title>
+	<dcat:keyword>Computação Gráfica</dcat:keyword>
+	<dcat:keyword>Computação Móvel</dcat:keyword>
 	<foaf:homepage>http://www.devmedia.com.br/webmobile/</foaf:homepage>
 </rdf:Description>
 
@@ -3695,10 +3695,10 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="http://www.ic.ufal.br/dac/lattes/jornal/518">
-	<rdf:type rdf:resource="http://www.ic.ufal.br/dac/Contribution"/>
-	<lattes:publisher>http://sispibic.uenf.br/Revist</lattes:publisher>
 	<dc:title>Professor virtual animado para processo de ensino</dc:title>
 	<dc:date>22102014</dc:date>
+	<rdf:type rdf:resource="http://www.ic.ufal.br/dac/Contribution"/>
+	<lattes:publisher>http://sispibic.uenf.br/Revist</lattes:publisher>
 	<foaf:homepage>http://sispibic.uenf.br/Revista2014.pdf</foaf:homepage>
 </rdf:Description>
 
