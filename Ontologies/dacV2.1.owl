@@ -16,10 +16,10 @@
     <Import>http://www.w3.org/ns/dcat</Import>
     <Import>http://purl.org/dc/terms/</Import>
     <Import>http://purl.org/spar/bido</Import>
+    <Import>http://www.ic.ufal.br/lattes/</Import>
     <Import>http://purl.org/spar/fabio/</Import>
     <Import>http://lod.springer.com/data/dataset/springer/ontology</Import>
     <Import>http://xmlns.com/foaf/0.1/</Import>
-    <Import>http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33</Import>
     <Declaration>
         <Class IRI="#Keyword"/>
     </Declaration>
@@ -81,10 +81,10 @@
         <ObjectProperty IRI="#locatesContribution"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#isbn"/>
+        <ObjectProperty IRI="#hasAuthor"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasAuthor"/>
+        <DataProperty IRI="#isbn"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasBibliometricDataInTime"/>
@@ -102,6 +102,9 @@
         <ObjectProperty IRI="#hasChapter"/>
     </Declaration>
     <Declaration>
+        <Class IRI="http://lod.springer.com/data/ontology/class/Conference"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#contributionDate"/>
     </Declaration>
     <Declaration>
@@ -112,6 +115,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#PhdThesis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://nees.com.br/boa-moradia/crawler/Locality.owl#Address"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSource"/>
@@ -183,10 +189,16 @@
         <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://nees.com.br/boa-moradia/crawler/Locality.owl#Address"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33#hasAddress"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://lod.springer.com/data/ontology/class/Conference"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33#hasAuthor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33#hasOrientation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33#hasProfessionalAddress"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="http://purl.org/spar/fabio/Work"/>
