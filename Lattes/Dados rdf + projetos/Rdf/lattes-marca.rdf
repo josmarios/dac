@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:dac="http://www.ic.ufal.br/dac/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:lattes="http://www.ic.ufal.br/lattes/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:fabio="http://purl.org/spar/fabio#"
+	xmlns:vcard="http://www.w3.org/2006/vcard/ns#">
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/contribution/lattes/marca/jecripe">
+	<rdf:type rdf:resource="http://www.ic.ufal.br/lattes/TradeMark"/>
+	<dc:title>JECRIPE</dc:title>
+	<lattes:year>2009</lattes:year>
+	<vcard:country-name>Brasil</vcard:country-name>
+	<dac:hasAuthor rdf:resource="http://www.ic.ufal.br/dac/author/lattes/5132988314756109"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/5132988314756109">
+	<rdf:type rdf:resource="http://www.ic.ufal.br/dac/Author"/>
+	<foaf:name>André Luiz Brandão</foaf:name>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/andr-luiz-brando">
+	<foaf:name>André Luiz Brandão</foaf:name>
+	<dac:hasContribution rdf:resource="http://www.ic.ufal.br/dac/contribution/lattes/marca/0"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/contribution/lattes/marca/adaptweb">
+	<rdf:type rdf:resource="http://www.ic.ufal.br/lattes/TradeMark"/>
+	<dc:title>AdaptWeb</dc:title>
+	<lattes:year>2004</lattes:year>
+	<vcard:country-name>Brasil</vcard:country-name>
+	<dac:hasAuthor rdf:resource="http://www.ic.ufal.br/dac/author/lattes/3262681213088048"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/3262681213088048">
+	<rdf:type rdf:resource="http://www.ic.ufal.br/dac/Author"/>
+	<foaf:name>José Palazzo Moreira de Oliveira</foaf:name>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/jos-palazzo-moreira-de-oliveira">
+	<foaf:name>José Palazzo Moreira de Oliveira</foaf:name>
+	<dac:hasContribution rdf:resource="http://www.ic.ufal.br/dac/contribution/lattes/marca/1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/jos-valdeni-de-lima">
+	<foaf:name>José Valdeni de Lima</foaf:name>
+	<dac:hasContribution rdf:resource="http://www.ic.ufal.br/dac/contribution/lattes/marca/1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/isabela-gasparini">
+	<foaf:name>Isabela Gasparini</foaf:name>
+	<dac:hasContribution rdf:resource="http://www.ic.ufal.br/dac/contribution/lattes/marca/1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/ana-marilza-pernas">
+	<foaf:name>Ana Marilza Pernas</foaf:name>
+	<dac:hasContribution rdf:resource="http://www.ic.ufal.br/dac/contribution/lattes/marca/1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/marcelo-s-pimenta">
+	<foaf:name>Marcelo S. Pimenta</foaf:name>
+	<dac:hasContribution rdf:resource="http://www.ic.ufal.br/dac/contribution/lattes/marca/1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/contribution/lattes/marca/grow-grupo-de-otimizao-da-web">
+	<rdf:type rdf:resource="http://www.ic.ufal.br/lattes/TradeMark"/>
+	<dc:title>GrOW - Grupo de Otimização da Web</dc:title>
+	<lattes:year>2011</lattes:year>
+	<vcard:country-name>Brasil</vcard:country-name>
+	<dac:hasAuthor rdf:resource="http://www.ic.ufal.br/dac/author/lattes/4038730280834132"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/4038730280834132">
+	<rdf:type rdf:resource="http://www.ic.ufal.br/dac/Author"/>
+	<foaf:name>Ig Ibert Bittencourt Santana Pinto</foaf:name>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/ig-ibert-bittencourt-santana-pinto">
+	<foaf:name>Ig Ibert Bittencourt Santana Pinto</foaf:name>
+	<dac:hasContribution rdf:resource="http://www.ic.ufal.br/dac/contribution/lattes/marca/2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/costa-evandro">
+	<foaf:name>Costa, Evandro</foaf:name>
+	<dac:hasContribution rdf:resource="http://www.ic.ufal.br/dac/contribution/lattes/marca/2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/contribution/lattes/marca/grow-grupo-de-otimizao-da-web">
+	<rdf:type rdf:resource="http://www.ic.ufal.br/lattes/TradeMark"/>
+	<dc:title>GrOW - Grupo de Otimização da Web</dc:title>
+	<lattes:year>2011</lattes:year>
+	<vcard:country-name>Brasil</vcard:country-name>
+	<dac:hasAuthor rdf:resource="http://www.ic.ufal.br/dac/author/lattes/4038730280834132"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/4038730280834132">
+	<rdf:type rdf:resource="http://www.ic.ufal.br/dac/Author"/>
+	<foaf:name>Ig Ibert Bittencourt Santana Pinto</foaf:name>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/ig-ibert-bittencourt-santana-pinto">
+	<foaf:name>Ig Ibert Bittencourt Santana Pinto</foaf:name>
+	<dac:hasContribution rdf:resource="http://www.ic.ufal.br/dac/contribution/lattes/marca/3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/costa-evandro">
+	<foaf:name>Costa, Evandro</foaf:name>
+	<dac:hasContribution rdf:resource="http://www.ic.ufal.br/dac/contribution/lattes/marca/3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/contribution/lattes/marca/vocal-lab">
+	<rdf:type rdf:resource="http://www.ic.ufal.br/lattes/TradeMark"/>
+	<dc:title>Vocal Lab</dc:title>
+	<lattes:year>2014</lattes:year>
+	<vcard:country-name>Brasil</vcard:country-name>
+	<dac:hasAuthor rdf:resource="http://www.ic.ufal.br/dac/author/lattes/6152592335669549"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/6152592335669549">
+	<rdf:type rdf:resource="http://www.ic.ufal.br/dac/Author"/>
+	<foaf:name>Alexandre Magno Andrade Maciel</foaf:name>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/alexandre-magno-andrade-maciel">
+	<foaf:name>Alexandre Magno Andrade Maciel</foaf:name>
+	<dac:hasContribution rdf:resource="http://www.ic.ufal.br/dac/contribution/lattes/marca/4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/edson-costa-de-barros-carvalho-filho">
+	<foaf:name>Edson Costa de Barros Carvalho Filho</foaf:name>
+	<dac:hasContribution rdf:resource="http://www.ic.ufal.br/dac/contribution/lattes/marca/4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/contribution/lattes/marca/grow-grupo-de-otimizao-da-web">
+	<rdf:type rdf:resource="http://www.ic.ufal.br/lattes/TradeMark"/>
+	<dc:title>GrOW - Grupo de Otimização da Web</dc:title>
+	<lattes:year>2011</lattes:year>
+	<vcard:country-name>Brasil</vcard:country-name>
+	<dac:hasAuthor rdf:resource="http://www.ic.ufal.br/dac/author/lattes/4038730280834132"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/4038730280834132">
+	<rdf:type rdf:resource="http://www.ic.ufal.br/dac/Author"/>
+	<foaf:name>Ig Ibert Bittencourt Santana Pinto</foaf:name>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/ig-ibert-bittencourt-santana-pinto">
+	<foaf:name>Ig Ibert Bittencourt Santana Pinto</foaf:name>
+	<dac:hasContribution rdf:resource="http://www.ic.ufal.br/dac/contribution/lattes/marca/5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.ic.ufal.br/dac/author/lattes/costa-evandro">
+	<foaf:name>Costa, Evandro</foaf:name>
+	<dac:hasContribution rdf:resource="http://www.ic.ufal.br/dac/contribution/lattes/marca/5"/>
+</rdf:Description>
+
+</rdf:RDF>
