@@ -69,6 +69,9 @@
         <Class IRI="#Contribution"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33#hasAddress"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isPublishedIn"/>
     </Declaration>
     <Declaration>
@@ -81,10 +84,10 @@
         <ObjectProperty IRI="#locatesContribution"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasAuthor"/>
+        <DataProperty IRI="#isbn"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#isbn"/>
+        <ObjectProperty IRI="#hasAuthor"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasBibliometricDataInTime"/>
@@ -93,10 +96,10 @@
         <Class IRI="#Source"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#versionNumber"/>
+        <Class IRI="#Review_Article"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Review_Article"/>
+        <DataProperty IRI="#versionNumber"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasChapter"/>
@@ -108,25 +111,31 @@
         <DataProperty IRI="#contributionDate"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#chapterNumber"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Book_Chapter"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#chapterNumber"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33#hasProfessionalAddress"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PhdThesis"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://nees.com.br/boa-moradia/crawler/Locality.owl#Address"/>
+        <ObjectProperty IRI="hasAcademicDegree"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasSource"/>
+        <Class IRI="http://nees.com.br/boa-moradia/crawler/Locality.owl#Address"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#copyrightDescription"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasBibliometricData"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSource"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#copyright"/>
@@ -139,6 +148,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Presentation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33#hasOrientation"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Technical_Report"/>
@@ -165,6 +177,9 @@
         <DataProperty IRI="#citationsNumber"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33#hasAuthor"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#sourceUri"/>
     </Declaration>
     <Declaration>
@@ -187,18 +202,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33#hasAddress"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33#hasAuthor"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33#hasOrientation"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33#hasProfessionalAddress"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="http://purl.org/spar/fabio/Work"/>
@@ -359,6 +362,10 @@
         <ObjectProperty IRI="#locatesContribution"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasAcademicDegree"/>
+        <Class IRI="http://ebiquity.umbc.edu/ontology/person.owl#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#describesArticle"/>
         <Class IRI="#Keyword"/>
     </ObjectPropertyDomain>
@@ -463,6 +470,10 @@
         <ObjectProperty IRI="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33#hasOrientation"/>
         <Class IRI="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasAcademicDegree"/>
+        <Class IRI="http://www.ic.ufal.br/lattes/#AcademicDegree"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#describesArticle"/>
         <Class IRI="#Article"/>
