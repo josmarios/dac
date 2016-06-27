@@ -2,10 +2,10 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/armando/ontologies/2014/5/untitled-ontology-33" uri="lattes.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1466577677345" name="http://ebiquity.umbc.edu/ontology/publication.owl#" uri="publication.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1466577677345" name="http://nees.com.br/boa-moradia/crawler/Locality.owl" uri="Locality.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1466577677345" name="http://www.ic.ufal.br/dac/" uri="dacV2.1.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1466577677345" name="http://www.ic.ufal.br/lattes/" uri="lattes.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1466577677345" name="http://www.semanticweb.org/josmario/ontologies/2016/2/untitled-ontology-12" uri="contribution.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1466985847107" name="http://ebiquity.umbc.edu/ontology/publication.owl#" uri="publication.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1466985847107" name="http://nees.com.br/boa-moradia/crawler/Locality.owl" uri="Locality.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1466985847107" name="http://www.ic.ufal.br/dac/" uri="dacV2.1.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1466985847107" name="http://www.ic.ufal.br/lattes/" uri="lattes.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1466985847107" name="http://www.semanticweb.org/josmario/ontologies/2016/2/untitled-ontology-12" uri="contribution.owl"/>
     </group>
 </catalog>
