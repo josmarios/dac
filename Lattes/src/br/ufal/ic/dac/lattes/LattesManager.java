@@ -4,13 +4,13 @@ public class LattesManager {
 
 	public static void main(String[] args) {
 
-		 String[] input = { "artigos-aceitos", "artigos-publicados",
-		 "capitulos-de-livros-publicados",
-		 "livros-ou-capitulos", "livros-publicados-ou-organizados", "marca",
-		 "orientacoes-em-andamento",
-		 "outras-orientacoes-concluidas", "software" };
+		 //String[] input = { "artigos-aceitos", "artigos-publicados",
+		 //"capitulos-de-livros-publicados",
+		 //"livros-ou-capitulos", "livros-publicados-ou-organizados", "marca",
+		 //"orientacoes-em-andamento",
+		 //"outras-orientacoes-concluidas", "software" };
 
-		//String[] input = { "outras-orientacoes-concluidas" };
+		String[] input = { "formacao-academica" };
 
 		for (String category : input) {
 			LattesXSL.getInstance().processXml(category);
