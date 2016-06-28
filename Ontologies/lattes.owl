@@ -43,14 +43,14 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Book"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Afterword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Foreword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Production"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Translation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Afterword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Foreword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Production"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Translation"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#Researcher"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/Researcher"/>
     </owl:ObjectProperty>
     
 
@@ -62,7 +62,7 @@
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Organization"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Researcher"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Researcher"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -75,7 +75,7 @@
 
     <owl:ObjectProperty rdf:about="http://swrc.ontoware.org/ontology#publisher">
         <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#Publisher"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/Publisher"/>
     </owl:ObjectProperty>
     
 
@@ -83,104 +83,113 @@
     <!-- http://swrc.ontoware.org/ontology#publishes -->
 
     <owl:ObjectProperty rdf:about="http://swrc.ontoware.org/ontology#publishes">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Publisher"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Publisher"/>
         <rdfs:range rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#haCoSupervisor -->
+    <!-- http://www.ic.ufal.br/lattes/haCoSupervisor -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#haCoSupervisor">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#hasSupervisor"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Graduation"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Specialization"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#StrictoSensu"/>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#Researcher"/>
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/haCoSupervisor">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/hasSupervisor"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Graduation"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Specialization"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/StrictoSensu"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/Researcher"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasAddress -->
+    <!-- http://www.ic.ufal.br/lattes/hasAcademicDegree -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasAddress">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasAcademicDegree">
+        <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/person.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/AcademicDegree"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ic.ufal.br/lattes/hasAddress -->
+
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasAddress">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Event"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Researcher"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Researcher"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#Address"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/Address"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasAuthor -->
+    <!-- http://www.ic.ufal.br/lattes/hasAuthor -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasAuthor">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasAuthor">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Book"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Afterword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Foreword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Production"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Translation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Afterword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Foreword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Production"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Translation"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#Researcher"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/Researcher"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasAuthorParticipation -->
+    <!-- http://www.ic.ufal.br/lattes/hasAuthorParticipation -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasAuthorParticipation">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasAuthorParticipation">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#author"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ShortCourse"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ShortCourse"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#Researcher"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/Researcher"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasCourse -->
+    <!-- http://www.ic.ufal.br/lattes/hasCourse -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasCourse">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasCourse">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#AdditionalTraining"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Graduation"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Improvement"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#LatoSensu"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Specialization"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#StrictoSensu"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/AdditionalTraining"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Graduation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Improvement"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/LatoSensu"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Specialization"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/StrictoSensu"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#Course"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/Course"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasInstitution -->
+    <!-- http://www.ic.ufal.br/lattes/hasInstitution -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasInstitution">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasInstitution">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Formation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Formation"/>
                     <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Project"/>
                 </owl:unionOf>
             </owl:Class>
@@ -190,149 +199,149 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasInstitutionUnit -->
+    <!-- http://www.ic.ufal.br/lattes/hasInstitutionUnit -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasInstitutionUnit">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasInstitutionUnit">
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
         <rdfs:range rdf:resource="http://swrc.ontoware.org/ontology#Department"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasInvolvedInstitutions -->
+    <!-- http://www.ic.ufal.br/lattes/hasInvolvedInstitutions -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasInvolvedInstitutions">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasInvolvedInstitutions">
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
         <rdfs:range rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasOperationArea -->
+    <!-- http://www.ic.ufal.br/lattes/hasOperationArea -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasOperationArea">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Researcher"/>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#ResearchArea"/>
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasOperationArea">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Researcher"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/ResearchArea"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasOrientation -->
+    <!-- http://www.ic.ufal.br/lattes/hasOrientation -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasOrientation">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasOrientation">
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
         <rdfs:range rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasProduction -->
+    <!-- http://www.ic.ufal.br/lattes/hasProduction -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasProduction">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasProduction">
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#Production"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/Production"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasProfessionalAddress -->
+    <!-- http://www.ic.ufal.br/lattes/hasProfessionalAddress -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasProfessionalAddress">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#hasAddress"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Researcher"/>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#ProfessionalAddress"/>
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasProfessionalAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/hasAddress"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Researcher"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/ProfessionalAddress"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasProfessionalTiesWith -->
+    <!-- http://www.ic.ufal.br/lattes/hasProfessionalTiesWith -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasProfessionalTiesWith">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Researcher"/>
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasProfessionalTiesWith">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Researcher"/>
         <rdfs:range rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasPromotingInstitution -->
+    <!-- http://www.ic.ufal.br/lattes/hasPromotingInstitution -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasPromotingInstitution">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasPromotingInstitution">
         <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Event"/>
         <rdfs:range rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasResearchArea -->
+    <!-- http://www.ic.ufal.br/lattes/hasResearchArea -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasResearchArea">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasResearchArea">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#FreeTeaching"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#LatoSensu"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PostDoctoral"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Production"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Specialization"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#StrictoSensu"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/FreeTeaching"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/LatoSensu"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PostDoctoral"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Production"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Specialization"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/StrictoSensu"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#ResearchArea"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/ResearchArea"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasResidentialAddress -->
+    <!-- http://www.ic.ufal.br/lattes/hasResidentialAddress -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasResidentialAddress">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#hasAddress"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Researcher"/>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#ResidentialAddress"/>
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasResidentialAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/hasAddress"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Researcher"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/ResidentialAddress"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasSection -->
+    <!-- http://www.ic.ufal.br/lattes/hasSection -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasSection">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasSection">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#FreeTeaching"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Production"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Specialization"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#StrictoSensu"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/FreeTeaching"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Production"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Specialization"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/StrictoSensu"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#Section"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/Section"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasSponsoringInstitution -->
+    <!-- http://www.ic.ufal.br/lattes/hasSponsoringInstitution -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasSponsoringInstitution">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasSponsoringInstitution">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#AdviceOrConsultancy"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Editing"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Graduation"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#LatoSensu"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherTechnicalPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PostDoctoral"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ProcessOrTechnique"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Product"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ResearchReport"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ShortCourse"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#StrictoSensu"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnicalCollege"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnicalWork"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnologicalExtension"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#UnregisteredSoftware"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/AdviceOrConsultancy"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Editing"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Graduation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/LatoSensu"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherTechnicalPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PostDoctoral"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ProcessOrTechnique"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Product"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ResearchReport"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ShortCourse"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/StrictoSensu"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnicalCollege"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnicalWork"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnologicalExtension"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/UnregisteredSoftware"/>
                     <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Project"/>
                 </owl:unionOf>
             </owl:Class>
@@ -342,40 +351,40 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasSupervisor -->
+    <!-- http://www.ic.ufal.br/lattes/hasSupervisor -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasSupervisor">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasSupervisor">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Graduation"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Specialization"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#StrictoSensu"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Graduation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Specialization"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/StrictoSensu"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#Researcher"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/Researcher"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasTeam -->
+    <!-- http://www.ic.ufal.br/lattes/hasTeam -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasTeam">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasTeam">
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
-        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/#Researcher"/>
+        <rdfs:range rdf:resource="http://www.ic.ufal.br/lattes/Researcher"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasTitular -->
+    <!-- http://www.ic.ufal.br/lattes/hasTitular -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#hasTitular">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#UnregisteredSoftware"/>
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/hasTitular">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/UnregisteredSoftware"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Researcher"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Researcher"/>
                     <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
                 </owl:unionOf>
             </owl:Class>
@@ -384,18 +393,18 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#isPartOf -->
+    <!-- http://www.ic.ufal.br/lattes/isPartOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#isPartOf">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#PerformingArts"/>
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/isPartOf">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/PerformingArts"/>
         <rdfs:range rdf:resource="http://swrc.ontoware.org/ontology#Event"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#isResearchReportOf -->
+    <!-- http://www.ic.ufal.br/lattes/isResearchReportOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/#isResearchReportOf">
+    <owl:ObjectProperty rdf:about="http://www.ic.ufal.br/lattes/isResearchReportOf">
         <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#TechnicalReport"/>
         <rdfs:range rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
     </owl:ObjectProperty>
@@ -429,23 +438,23 @@
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InProceedings"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Report"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#AdviceOrConsultancy"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Afterword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Courseware"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Editing"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Foreword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Magazine"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#MusicalScore"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PaperPresentation"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ProcessOrTechnique"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Product"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PublishedArticle"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Talk"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnicalWork"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnologicalExtension"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Translation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/AdviceOrConsultancy"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Afterword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Courseware"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Editing"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Foreword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Magazine"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/MusicalScore"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PaperPresentation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ProcessOrTechnique"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Product"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PublishedArticle"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Talk"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnicalWork"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnologicalExtension"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Translation"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -457,16 +466,16 @@
     <!-- http://swrc.ontoware.org/ontology#keywords -->
 
     <owl:DatatypeProperty rdf:about="http://swrc.ontoware.org/ontology#keywords">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#FreeTeaching"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#MedicResidency"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#StrictoSensu"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/FreeTeaching"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/MedicResidency"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/StrictoSensu"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#FreeTeaching"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#MedicResidency"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Production"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#StrictoSensu"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/FreeTeaching"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/MedicResidency"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Production"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/StrictoSensu"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -481,8 +490,8 @@
         <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/name"/>
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/person.owl#Person"/>
         <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Course"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Section"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Course"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Section"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -494,9 +503,9 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#IdentityCard"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#MedicResidency"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Passport"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/IdentityCard"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/MedicResidency"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Passport"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -520,10 +529,10 @@
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Book"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InProceedings"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Afterword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Foreword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PublishedArticle"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Translation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Afterword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Foreword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PublishedArticle"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Translation"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -536,7 +545,7 @@
 
     <owl:DatatypeProperty rdf:about="http://swrc.ontoware.org/ontology#title">
         <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/title"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Production"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Production"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -557,11 +566,11 @@
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Book"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InProceedings"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Afterword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Foreword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Magazine"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PublishedArticle"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Translation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Afterword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Foreword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Magazine"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PublishedArticle"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Translation"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -577,7 +586,7 @@
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Event"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Product"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Product"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -586,45 +595,45 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#academicMscResearchersNumber -->
+    <!-- http://www.ic.ufal.br/lattes/academicMscResearchersNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#academicMscResearchersNumber">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#researchersNumber"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/academicMscResearchersNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/researchersNumber"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#annalsTitle -->
+    <!-- http://www.ic.ufal.br/lattes/annalsTitle -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#annalsTitle">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/annalsTitle">
         <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#InProceedings"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#authorOfReferenceWork -->
+    <!-- http://www.ic.ufal.br/lattes/authorOfReferenceWork -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#authorOfReferenceWork">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#referenceWork"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/authorOfReferenceWork">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/referenceWork"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#availability -->
+    <!-- http://www.ic.ufal.br/lattes/availability -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#availability">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/availability">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Report"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#AdviceOrConsultancy"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ProcessOrTechnique"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Product"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnicalWork"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnologicalExtension"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/AdviceOrConsultancy"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ProcessOrTechnique"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Product"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnicalWork"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnologicalExtension"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -649,18 +658,18 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#awards -->
+    <!-- http://www.ic.ufal.br/lattes/awards -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#awards">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/awards">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#bookType -->
+    <!-- http://www.ic.ufal.br/lattes/bookType -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#bookType">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/bookType">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#type"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
@@ -692,47 +701,47 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#bornDate -->
+    <!-- http://www.ic.ufal.br/lattes/bornDate -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#bornDate">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/bornDate">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#date"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#BornData"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/BornData"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#catalogNumber -->
+    <!-- http://www.ic.ufal.br/lattes/catalogNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#catalogNumber">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/catalogNumber">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#MusicalScore"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/MusicalScore"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#chapterTitle -->
+    <!-- http://www.ic.ufal.br/lattes/chapterTitle -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#chapterTitle">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/chapterTitle">
         <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#InBook"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#citationName -->
+    <!-- http://www.ic.ufal.br/lattes/citationName -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#citationName">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Researcher"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/citationName">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Researcher"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#city -->
+    <!-- http://www.ic.ufal.br/lattes/city -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#city">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/city">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -740,20 +749,20 @@
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Event"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InProceedings"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Address"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#AdviceOrConsultancy"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Afterword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Editing"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Foreword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Magazine"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#MusicalScore"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherTechnicalPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ProcessOrTechnique"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Product"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnicalWork"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnologicalExtension"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Translation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Address"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/AdviceOrConsultancy"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Afterword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Editing"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Foreword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Magazine"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/MusicalScore"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherTechnicalPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ProcessOrTechnique"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Product"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnicalWork"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnologicalExtension"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Translation"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -762,35 +771,35 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#collegeResearchersNumber -->
+    <!-- http://www.ic.ufal.br/lattes/collegeResearchersNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#collegeResearchersNumber">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#researchersNumber"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/collegeResearchersNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/researchersNumber"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#country -->
+    <!-- http://www.ic.ufal.br/lattes/country -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#country">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/country">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Book"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InProceedings"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Address"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Afterword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Foreword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Magazine"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#MusicalScore"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PaperPresentation"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Passport"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Talk"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnicalProduction"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Translation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Address"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Afterword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Foreword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Magazine"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/MusicalScore"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PaperPresentation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Passport"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Talk"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnicalProduction"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Translation"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -799,17 +808,17 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#courseStatus -->
+    <!-- http://www.ic.ufal.br/lattes/courseStatus -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#courseStatus">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/courseStatus">
         <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/status"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#AcademicDegree"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#AdditionalTraining"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PostDoctoral"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/AcademicDegree"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/AdditionalTraining"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PostDoctoral"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -840,9 +849,9 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#cpf -->
+    <!-- http://www.ic.ufal.br/lattes/cpf -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#cpf">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/cpf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/person.owl#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -850,12 +859,12 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#current -->
+    <!-- http://www.ic.ufal.br/lattes/current -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#current">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/current">
         <rdfs:domain>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/#hasProfessionalTiesWith"/>
+                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/hasProfessionalTiesWith"/>
                 <owl:someValuesFrom rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
             </owl:Restriction>
         </rdfs:domain>
@@ -864,18 +873,18 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#description -->
+    <!-- http://www.ic.ufal.br/lattes/description -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#description">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/description">
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#disseminationMean -->
+    <!-- http://www.ic.ufal.br/lattes/disseminationMean -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#disseminationMean">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/disseminationMean">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -883,19 +892,19 @@
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InProceedings"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Misc"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#AdviceOrConsultancy"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Courseware"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Editing"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PaperPresentation"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ProcessOrTechnique"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Product"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PublishedArticle"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ShortCourse"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Talk"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnicalWork"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnologicalExtension"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/AdviceOrConsultancy"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Courseware"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Editing"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PaperPresentation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ProcessOrTechnique"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Product"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PublishedArticle"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ShortCourse"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Talk"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnicalWork"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnologicalExtension"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -950,20 +959,20 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#doctoralResearchersNumber -->
+    <!-- http://www.ic.ufal.br/lattes/doctoralResearchersNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#doctoralResearchersNumber">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#researchersNumber"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/doctoralResearchersNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/researchersNumber"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#doctoralType -->
+    <!-- http://www.ic.ufal.br/lattes/doctoralType -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#doctoralType">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/doctoralType">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#type"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#DoctoralDegree"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/DoctoralDegree"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -997,9 +1006,9 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#doi -->
+    <!-- http://www.ic.ufal.br/lattes/doi -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#doi">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/doi">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1015,19 +1024,19 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#duration -->
+    <!-- http://www.ic.ufal.br/lattes/duration -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#duration">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/duration">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#AdviceOrConsultancy"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Music"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherArtisticalOrCulturalProductions"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PerformingArts"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ShortCourse"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnicalWork"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnologicalExtension"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/AdviceOrConsultancy"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Music"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherArtisticalOrCulturalProductions"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PerformingArts"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ShortCourse"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnicalWork"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnologicalExtension"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1036,26 +1045,26 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#durationUnit -->
+    <!-- http://www.ic.ufal.br/lattes/durationUnit -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#durationUnit">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#ShortCourse"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/durationUnit">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/ShortCourse"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#edition -->
+    <!-- http://www.ic.ufal.br/lattes/edition -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#edition">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/edition">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Book"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Afterword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Foreword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Translation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Afterword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Foreword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Translation"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1064,9 +1073,9 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#educationAndCTPopularization -->
+    <!-- http://www.ic.ufal.br/lattes/educationAndCTPopularization -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#educationAndCTPopularization">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/educationAndCTPopularization">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1074,19 +1083,19 @@
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Book"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InProceedings"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Afterword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Courseware"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Foreword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Magazine"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#MusicalScore"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherTechnicalPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PaperPresentation"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ShortCourse"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Talk"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Translation"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#UnregisteredSoftware"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Afterword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Courseware"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Foreword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Magazine"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/MusicalScore"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherTechnicalPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PaperPresentation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ShortCourse"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Talk"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Translation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/UnregisteredSoftware"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1095,12 +1104,12 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#employment -->
+    <!-- http://www.ic.ufal.br/lattes/employment -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#employment">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/employment">
         <rdfs:domain>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/#hasProfessionalTiesWith"/>
+                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/hasProfessionalTiesWith"/>
                 <owl:someValuesFrom rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
             </owl:Restriction>
         </rdfs:domain>
@@ -1109,35 +1118,35 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#end -->
+    <!-- http://www.ic.ufal.br/lattes/end -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#end">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#period"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/end">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/period"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#endDate -->
+    <!-- http://www.ic.ufal.br/lattes/endDate -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#endDate">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/endDate">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#date"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#OtherArtisticalOrCulturalProductions"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/OtherArtisticalOrCulturalProductions"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#endPage -->
+    <!-- http://www.ic.ufal.br/lattes/endPage -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#endPage">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/endPage">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#pages"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InProceedings"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Magazine"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PublishedArticle"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Magazine"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PublishedArticle"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1146,14 +1155,14 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#englishDescription -->
+    <!-- http://www.ic.ufal.br/lattes/englishDescription -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#englishDescription">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#description"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/englishDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/description"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Production"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Production"/>
                     <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Project"/>
                 </owl:unionOf>
             </owl:Class>
@@ -1163,9 +1172,9 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#englishProjectName -->
+    <!-- http://www.ic.ufal.br/lattes/englishProjectName -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#englishProjectName">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/englishProjectName">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#name"/>
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -1173,27 +1182,27 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#englishTitle -->
+    <!-- http://www.ic.ufal.br/lattes/englishTitle -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#englishTitle">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Production"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/englishTitle">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Production"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#eventName -->
+    <!-- http://www.ic.ufal.br/lattes/eventName -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#eventName">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/eventName">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#name"/>
         <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Event"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#eventRange -->
+    <!-- http://www.ic.ufal.br/lattes/eventRange -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#eventRange">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/eventRange">
         <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Event"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -1228,12 +1237,12 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#exclusiveDedication -->
+    <!-- http://www.ic.ufal.br/lattes/exclusiveDedication -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#exclusiveDedication">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/exclusiveDedication">
         <rdfs:domain>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/#hasProfessionalTiesWith"/>
+                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/hasProfessionalTiesWith"/>
                 <owl:someValuesFrom rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
             </owl:Restriction>
         </rdfs:domain>
@@ -1242,26 +1251,26 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#expirationDate -->
+    <!-- http://www.ic.ufal.br/lattes/expirationDate -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#expirationDate">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/expirationDate">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#date"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Passport"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Passport"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#fascicle -->
+    <!-- http://www.ic.ufal.br/lattes/fascicle -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#fascicle">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/fascicle">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InProceedings"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Afterword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Foreword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Translation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Afterword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Foreword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Translation"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1270,20 +1279,20 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#finality -->
+    <!-- http://www.ic.ufal.br/lattes/finality -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#finality">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/finality">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#AdviceOrConsultancy"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Courseware"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherTechnicalPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ProcessOrTechnique"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Product"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnicalWork"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnologicalExtension"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#UnregisteredSoftware"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/AdviceOrConsultancy"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Courseware"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherTechnicalPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ProcessOrTechnique"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Product"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnicalWork"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnologicalExtension"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/UnregisteredSoftware"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1292,16 +1301,16 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#generalType -->
+    <!-- http://www.ic.ufal.br/lattes/generalType -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#generalType">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/generalType">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#type"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Graduation"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#MastersDegree"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Graduation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/MastersDegree"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1326,43 +1335,43 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#genuineLanguage -->
+    <!-- http://www.ic.ufal.br/lattes/genuineLanguage -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#genuineLanguage">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Translation"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/genuineLanguage">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Translation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#genuineTitle -->
+    <!-- http://www.ic.ufal.br/lattes/genuineTitle -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#genuineTitle">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Translation"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/genuineTitle">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Translation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasInnovationPotential -->
+    <!-- http://www.ic.ufal.br/lattes/hasInnovationPotential -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#hasInnovationPotential">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/hasInnovationPotential">
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#hasPotential -->
+    <!-- http://www.ic.ufal.br/lattes/hasPotential -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#hasPotential">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#potential"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/hasPotential">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/potential"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ProcessOrTechnique"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Product"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#UnregisteredSoftware"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ProcessOrTechnique"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Product"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/UnregisteredSoftware"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1371,16 +1380,16 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#innovationPotential -->
+    <!-- http://www.ic.ufal.br/lattes/innovationPotential -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#innovationPotential">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#potential"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/innovationPotential">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/potential"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ProcessOrTechnique"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Product"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#UnregisteredSoftware"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ProcessOrTechnique"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Product"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/UnregisteredSoftware"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1389,14 +1398,14 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#instrumentalTraining -->
+    <!-- http://www.ic.ufal.br/lattes/instrumentalTraining -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#instrumentalTraining">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/instrumentalTraining">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Music"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#MusicalScore"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Music"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/MusicalScore"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1405,10 +1414,10 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#issnOrIsbn -->
+    <!-- http://www.ic.ufal.br/lattes/issnOrIsbn -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#issnOrIsbn">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#OtherPublication"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/issnOrIsbn">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/OtherPublication"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1416,9 +1425,9 @@
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Book"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InProceedings"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Magazine"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Translation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Magazine"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Translation"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1426,15 +1435,15 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#issueDate -->
+    <!-- http://www.ic.ufal.br/lattes/issueDate -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#issueDate">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/issueDate">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#date"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#IdentityCard"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Passport"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/IdentityCard"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Passport"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1443,32 +1452,32 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#issuingAgency -->
+    <!-- http://www.ic.ufal.br/lattes/issuingAgency -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#issuingAgency">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#IdentityCard"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/issuingAgency">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/IdentityCard"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#itinerant -->
+    <!-- http://www.ic.ufal.br/lattes/itinerant -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#itinerant">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#VisualArts"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/itinerant">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/VisualArts"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#journalTitle -->
+    <!-- http://www.ic.ufal.br/lattes/journalTitle -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#journalTitle">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/journalTitle">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Article"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Magazine"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Magazine"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1477,23 +1486,23 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#language -->
+    <!-- http://www.ic.ufal.br/lattes/language -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#language">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/language">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#AdviceOrConsultancy"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#BibliographicalProduction"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Courseware"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Editing"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherTechnicalPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ProcessOrTechnique"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Product"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ShortCourse"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnicalWork"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnologicalExtension"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/AdviceOrConsultancy"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/BibliographicalProduction"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Courseware"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Editing"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherTechnicalPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ProcessOrTechnique"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Product"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ShortCourse"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnicalWork"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnologicalExtension"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1502,10 +1511,10 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#level -->
+    <!-- http://www.ic.ufal.br/lattes/level -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#level">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#AdditionalTraining"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/level">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/AdditionalTraining"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -1539,40 +1548,40 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#month -->
+    <!-- http://www.ic.ufal.br/lattes/month -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#month">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#obtainingTitle"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/month">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/obtainingTitle"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#nature -->
+    <!-- http://www.ic.ufal.br/lattes/nature -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#nature">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/nature">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Book"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InProceedings"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#AdviceOrConsultancy"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Afterword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Courseware"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Editing"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Foreword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#MusicalScore"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherTechnicalPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ProcessOrTechnique"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Product"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Talk"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnicalWork"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Translation"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#UnregisteredSoftware"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/AdviceOrConsultancy"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Afterword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Courseware"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Editing"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Foreword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/MusicalScore"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherTechnicalPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ProcessOrTechnique"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Product"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Talk"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnicalWork"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Translation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/UnregisteredSoftware"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/#hasSponsoringInstitution"/>
-                        <owl:someValuesFrom rdf:resource="http://www.ic.ufal.br/lattes/#SponsoringInstitution"/>
+                        <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/hasSponsoringInstitution"/>
+                        <owl:someValuesFrom rdf:resource="http://www.ic.ufal.br/lattes/SponsoringInstitution"/>
                     </owl:Restriction>
                 </owl:unionOf>
             </owl:Class>
@@ -1582,14 +1591,14 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#obtainingTitle -->
+    <!-- http://www.ic.ufal.br/lattes/obtainingTitle -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#obtainingTitle">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/obtainingTitle">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#FreeTeaching"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#StrictoSensu"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/FreeTeaching"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/StrictoSensu"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1598,13 +1607,13 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#order -->
+    <!-- http://www.ic.ufal.br/lattes/order -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#order">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/order">
         <rdfs:domain>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/#hasOperationArea"/>
-                <owl:someValuesFrom rdf:resource="http://www.ic.ufal.br/lattes/#ResearchArea"/>
+                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/hasOperationArea"/>
+                <owl:someValuesFrom rdf:resource="http://www.ic.ufal.br/lattes/ResearchArea"/>
             </owl:Restriction>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
@@ -1612,9 +1621,9 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#organizer -->
+    <!-- http://www.ic.ufal.br/lattes/organizer -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#organizer">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/organizer">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1628,15 +1637,15 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#originality -->
+    <!-- http://www.ic.ufal.br/lattes/originality -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#originality">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/originality">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Music"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherArtisticalOrCulturalProductions"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PerformingArts"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Music"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherArtisticalOrCulturalProductions"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PerformingArts"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1645,15 +1654,15 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#otherInformation -->
+    <!-- http://www.ic.ufal.br/lattes/otherInformation -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#otherInformation">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/otherInformation">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Production"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Production"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/#hasProfessionalTiesWith"/>
+                        <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/hasProfessionalTiesWith"/>
                         <owl:someValuesFrom rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
                     </owl:Restriction>
                 </owl:unionOf>
@@ -1664,22 +1673,22 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#pageNumber -->
+    <!-- http://www.ic.ufal.br/lattes/pageNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#pageNumber">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/pageNumber">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#pages"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Book"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Afterword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Editing"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Foreword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#MusicalScore"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnicalWork"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Translation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Afterword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Editing"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Foreword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/MusicalScore"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnicalWork"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Translation"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1688,17 +1697,17 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#period -->
+    <!-- http://www.ic.ufal.br/lattes/period -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#period">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/period">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#AcademicDegree"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PostDoctoral"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/AcademicDegree"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PostDoctoral"/>
                     <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Project"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/#hasProfessionalTiesWith"/>
+                        <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/hasProfessionalTiesWith"/>
                         <owl:someValuesFrom rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
                     </owl:Restriction>
                 </owl:unionOf>
@@ -1709,16 +1718,16 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#place -->
+    <!-- http://www.ic.ufal.br/lattes/place -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#place">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/place">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Event"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherTechnicalPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ShortCourse"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherTechnicalPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ShortCourse"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1727,52 +1736,52 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#potential -->
+    <!-- http://www.ic.ufal.br/lattes/potential -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#potential"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/potential"/>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#productionType -->
+    <!-- http://www.ic.ufal.br/lattes/productionType -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#productionType">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/productionType">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#type"/>
         <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Book"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Afterword"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Foreword"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Magazine"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Product"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#UnregisteredSoftware"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Afterword"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Foreword"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Magazine"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Product"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/UnregisteredSoftware"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#professionalMscResearchersNumber -->
+    <!-- http://www.ic.ufal.br/lattes/professionalMscResearchersNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#professionalMscResearchersNumber">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#researchersNumber"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/professionalMscResearchersNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/researchersNumber"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#programmingLanguage -->
+    <!-- http://www.ic.ufal.br/lattes/programmingLanguage -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#programmingLanguage">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#UnregisteredSoftware"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/programmingLanguage">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/UnregisteredSoftware"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#projectAmountFinanced -->
+    <!-- http://www.ic.ufal.br/lattes/projectAmountFinanced -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#projectAmountFinanced">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/projectAmountFinanced">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#number"/>
         <rdfs:domain>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/#hasSponsoringInstitution"/>
-                <owl:someValuesFrom rdf:resource="http://www.ic.ufal.br/lattes/#SponsoringInstitution"/>
+                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/hasSponsoringInstitution"/>
+                <owl:someValuesFrom rdf:resource="http://www.ic.ufal.br/lattes/SponsoringInstitution"/>
             </owl:Restriction>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
@@ -1780,14 +1789,14 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#projectCodeNumber -->
+    <!-- http://www.ic.ufal.br/lattes/projectCodeNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#projectCodeNumber">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/projectCodeNumber">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#number"/>
         <rdfs:domain>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/#hasSponsoringInstitution"/>
-                <owl:someValuesFrom rdf:resource="http://www.ic.ufal.br/lattes/#SponsoringInstitution"/>
+                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/hasSponsoringInstitution"/>
+                <owl:someValuesFrom rdf:resource="http://www.ic.ufal.br/lattes/SponsoringInstitution"/>
             </owl:Restriction>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
@@ -1795,18 +1804,18 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#projectInnovationPotential -->
+    <!-- http://www.ic.ufal.br/lattes/projectInnovationPotential -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#projectInnovationPotential">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/projectInnovationPotential">
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#projectName -->
+    <!-- http://www.ic.ufal.br/lattes/projectName -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#projectName">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/projectName">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#name"/>
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -1814,9 +1823,9 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#projectStatuts -->
+    <!-- http://www.ic.ufal.br/lattes/projectStatuts -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#projectStatuts">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/projectStatuts">
         <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/status"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
@@ -1847,9 +1856,9 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#projectType -->
+    <!-- http://www.ic.ufal.br/lattes/projectType -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#projectType">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/projectType">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#type"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
@@ -1886,31 +1895,31 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#publicationDate -->
+    <!-- http://www.ic.ufal.br/lattes/publicationDate -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#publicationDate">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/publicationDate">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#date"/>
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Magazine"/>
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Magazine"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#publisher -->
+    <!-- http://www.ic.ufal.br/lattes/publisher -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#publisher">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/publisher">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Book"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InProceedings"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Afterword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Editing"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Foreword"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#MusicalScore"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherPublication"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Translation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Afterword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Editing"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Foreword"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/MusicalScore"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherPublication"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Translation"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1919,15 +1928,15 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#referenceWork -->
+    <!-- http://www.ic.ufal.br/lattes/referenceWork -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#referenceWork">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/referenceWork">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Music"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherArtisticalOrCulturalProductions"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PerformingArts"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Music"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherArtisticalOrCulturalProductions"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PerformingArts"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1935,27 +1944,27 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#registrationNumber -->
+    <!-- http://www.ic.ufal.br/lattes/registrationNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#registrationNumber">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/registrationNumber">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#number"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#researchCompanyCooperationProject -->
+    <!-- http://www.ic.ufal.br/lattes/researchCompanyCooperationProject -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#researchCompanyCooperationProject">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/researchCompanyCooperationProject">
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#researchersNumber -->
+    <!-- http://www.ic.ufal.br/lattes/researchersNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#researchersNumber">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/researchersNumber">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#number"/>
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/project.owl#Project"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
@@ -1963,12 +1972,12 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#role -->
+    <!-- http://www.ic.ufal.br/lattes/role -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#role">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/role">
         <rdfs:domain>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/#hasProfessionalTiesWith"/>
+                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/hasProfessionalTiesWith"/>
                 <owl:someValuesFrom rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
             </owl:Restriction>
         </rdfs:domain>
@@ -1977,17 +1986,17 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#scholarship -->
+    <!-- http://www.ic.ufal.br/lattes/scholarship -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#scholarship">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/scholarship">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Graduation"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#LatoSensu"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PostDoctoral"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#StrictoSensu"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TechnicalCollege"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Graduation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/LatoSensu"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PostDoctoral"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/StrictoSensu"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TechnicalCollege"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -1996,18 +2005,18 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#season -->
+    <!-- http://www.ic.ufal.br/lattes/season -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#season">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/season">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#sexualGender -->
+    <!-- http://www.ic.ufal.br/lattes/sexualGender -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#sexualGender">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/sexualGender">
         <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/gender"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/dc/terms/Agent"/>
@@ -2032,10 +2041,10 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#shortCourseLevel -->
+    <!-- http://www.ic.ufal.br/lattes/shortCourseLevel -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#shortCourseLevel">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#ShortCourse"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/shortCourseLevel">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/ShortCourse"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -2069,9 +2078,9 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#skinColor -->
+    <!-- http://www.ic.ufal.br/lattes/skinColor -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#skinColor">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/skinColor">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://ebiquity.umbc.edu/ontology/person.owl#Person"/>
         <rdfs:range>
@@ -2113,32 +2122,32 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#specializationResearchersNumber -->
+    <!-- http://www.ic.ufal.br/lattes/specializationResearchersNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#specializationResearchersNumber">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#researchersNumber"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/specializationResearchersNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/researchersNumber"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#start -->
+    <!-- http://www.ic.ufal.br/lattes/start -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#start">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#period"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/start">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/period"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#startDate -->
+    <!-- http://www.ic.ufal.br/lattes/startDate -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#startDate">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/startDate">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#date"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Music"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherArtisticalOrCulturalProductions"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PerformingArts"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Music"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherArtisticalOrCulturalProductions"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PerformingArts"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -2147,17 +2156,17 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#startPage -->
+    <!-- http://www.ic.ufal.br/lattes/startPage -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#startPage">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/startPage">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#pages"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InBook"/>
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#InProceedings"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Magazine"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PublishedArticle"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Magazine"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PublishedArticle"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -2166,21 +2175,21 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#technicalResearchersNumber -->
+    <!-- http://www.ic.ufal.br/lattes/technicalResearchersNumber -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#technicalResearchersNumber">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#researchersNumber"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/technicalResearchersNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/researchersNumber"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#tieType -->
+    <!-- http://www.ic.ufal.br/lattes/tieType -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#tieType">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/tieType">
         <rdfs:subPropertyOf rdf:resource="http://swrc.ontoware.org/ontology#type"/>
         <rdfs:domain>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/#hasProfessionalTiesWith"/>
+                <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/hasProfessionalTiesWith"/>
                 <owl:someValuesFrom rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
             </owl:Restriction>
         </rdfs:domain>
@@ -2223,34 +2232,34 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#titleOfReferenceWork -->
+    <!-- http://www.ic.ufal.br/lattes/titleOfReferenceWork -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#titleOfReferenceWork">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#referenceWork"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/titleOfReferenceWork">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/referenceWork"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#top5 -->
+    <!-- http://www.ic.ufal.br/lattes/top5 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#top5">
-        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/#Production"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/top5">
+        <rdfs:domain rdf:resource="http://www.ic.ufal.br/lattes/Production"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#uf -->
+    <!-- http://www.ic.ufal.br/lattes/uf -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#uf">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/uf">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Organization"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Address"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#BornData"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#IdentityCard"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Address"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/BornData"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/IdentityCard"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -2259,17 +2268,17 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#workload -->
+    <!-- http://www.ic.ufal.br/lattes/workload -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#workload">
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/workload">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#AdditionalTraining"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Improvement"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Specialization"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/AdditionalTraining"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Improvement"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Specialization"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/#hasProfessionalTiesWith"/>
+                        <owl:onProperty rdf:resource="http://www.ic.ufal.br/lattes/hasProfessionalTiesWith"/>
                         <owl:someValuesFrom rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
                     </owl:Restriction>
                 </owl:unionOf>
@@ -2280,18 +2289,18 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#year -->
+    <!-- http://www.ic.ufal.br/lattes/year -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#year">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#obtainingTitle"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/year">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/obtainingTitle"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#yearOfReferenceWork -->
+    <!-- http://www.ic.ufal.br/lattes/yearOfReferenceWork -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/#yearOfReferenceWork">
-        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/#referenceWork"/>
+    <owl:DatatypeProperty rdf:about="http://www.ic.ufal.br/lattes/yearOfReferenceWork">
+        <rdfs:subPropertyOf rdf:resource="http://www.ic.ufal.br/lattes/referenceWork"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
@@ -2300,7 +2309,7 @@
     <!-- http://xmlns.com/foaf/0.1/name -->
 
     <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name">
-        <rdfs:domain rdf:resource="_:genid792"/>
+        <rdfs:domain rdf:resource="_:genid704"/>
     </rdf:Description>
     
 
@@ -2311,11 +2320,11 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#FreeTeaching"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Graduation"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Improvement"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Specialization"/>
-                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#StrictoSensu"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/FreeTeaching"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Graduation"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Improvement"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Specialization"/>
+                    <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/StrictoSensu"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -2335,9 +2344,9 @@
     
 
 
-    <!-- _:genid792 -->
+    <!-- _:genid704 -->
 
-    <owl:Class rdf:about="_:genid792"/>
+    <owl:Class rdf:about="_:genid704"/>
     
 
 
@@ -2345,7 +2354,7 @@
 
     <owl:Class rdf:about="http://ebiquity.umbc.edu/ontology/person.owl#Person">
         <owl:equivalentClass rdf:resource="http://swrc.ontoware.org/ontology#Person"/>
-        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/#Researcher"/>
+        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/Researcher"/>
         <owl:equivalentClass rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:Class>
@@ -2380,7 +2389,7 @@
     <!-- http://linkn.com.br/onto/locality/Address -->
 
     <owl:Class rdf:about="http://linkn.com.br/onto/locality/Address">
-        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/#Address"/>
+        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/Address"/>
     </owl:Class>
     
 
@@ -2418,7 +2427,7 @@
     <!-- http://swrc.ontoware.org/ontology#InBook -->
 
     <owl:Class rdf:about="http://swrc.ontoware.org/ontology#InBook">
-        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/#Chapter"/>
+        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/Chapter"/>
     </owl:Class>
     
 
@@ -2426,7 +2435,7 @@
     <!-- http://swrc.ontoware.org/ontology#InProceedings -->
 
     <owl:Class rdf:about="http://swrc.ontoware.org/ontology#InProceedings">
-        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/#Annals"/>
+        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/Annals"/>
     </owl:Class>
     
 
@@ -2434,7 +2443,7 @@
     <!-- http://swrc.ontoware.org/ontology#Misc -->
 
     <owl:Class rdf:about="http://swrc.ontoware.org/ontology#Misc">
-        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/#OtherPublication"/>
+        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/OtherPublication"/>
     </owl:Class>
     
 
@@ -2450,7 +2459,7 @@
     <!-- http://swrc.ontoware.org/ontology#Person -->
 
     <owl:Class rdf:about="http://swrc.ontoware.org/ontology#Person">
-        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/#Researcher"/>
+        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/Researcher"/>
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </owl:Class>
     
@@ -2459,7 +2468,7 @@
     <!-- http://swrc.ontoware.org/ontology#Product -->
 
     <owl:Class rdf:about="http://swrc.ontoware.org/ontology#Product">
-        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/#Product"/>
+        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/Product"/>
     </owl:Class>
     
 
@@ -2473,7 +2482,7 @@
     <!-- http://swrc.ontoware.org/ontology#Publication -->
 
     <owl:Class rdf:about="http://swrc.ontoware.org/ontology#Publication">
-        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/#BibliographicalProduction"/>
+        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/BibliographicalProduction"/>
     </owl:Class>
     
 
@@ -2481,7 +2490,7 @@
     <!-- http://swrc.ontoware.org/ontology#Report -->
 
     <owl:Class rdf:about="http://swrc.ontoware.org/ontology#Report">
-        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/#ResearchReport"/>
+        <owl:equivalentClass rdf:resource="http://www.ic.ufal.br/lattes/ResearchReport"/>
     </owl:Class>
     
 
@@ -2492,633 +2501,633 @@
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#AcademicDegree -->
+    <!-- http://www.ic.ufal.br/lattes/AcademicDegree -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#AcademicDegree">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Formation"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/AcademicDegree">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Formation"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#AcamdicMsc -->
+    <!-- http://www.ic.ufal.br/lattes/AcamdicMsc -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#AcamdicMsc">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#MastersDegree"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/AcamdicMsc">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/MastersDegree"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#AcceptedArticle -->
+    <!-- http://www.ic.ufal.br/lattes/AcceptedArticle -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#AcceptedArticle">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/AcceptedArticle">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Article"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#AdditionalTraining -->
+    <!-- http://www.ic.ufal.br/lattes/AdditionalTraining -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#AdditionalTraining">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#NonAcademicDegree"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/AdditionalTraining">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/NonAcademicDegree"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Address -->
+    <!-- http://www.ic.ufal.br/lattes/Address -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Address"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Address"/>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#AdviceOrConsultancy -->
+    <!-- http://www.ic.ufal.br/lattes/AdviceOrConsultancy -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#AdviceOrConsultancy">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#TechnicalProduction"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/AdviceOrConsultancy">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/TechnicalProduction"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Afterword -->
+    <!-- http://www.ic.ufal.br/lattes/Afterword -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Afterword">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Afterword">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Annals -->
+    <!-- http://www.ic.ufal.br/lattes/Annals -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Annals">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Annals">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Area -->
+    <!-- http://www.ic.ufal.br/lattes/Area -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Area">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#HighArea"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Area">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/HighArea"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction -->
+    <!-- http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Production"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Production"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#BasicEducation -->
+    <!-- http://www.ic.ufal.br/lattes/BasicEducation -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#BasicEducation">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#BasicFormation"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/BasicEducation">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/BasicFormation"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#BasicFormation -->
+    <!-- http://www.ic.ufal.br/lattes/BasicFormation -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#BasicFormation">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#AcademicDegree"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/BasicFormation">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/AcademicDegree"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#BibliographicalProduction -->
+    <!-- http://www.ic.ufal.br/lattes/BibliographicalProduction -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#BibliographicalProduction">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Production"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/BibliographicalProduction">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Production"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#BornData -->
+    <!-- http://www.ic.ufal.br/lattes/BornData -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#BornData">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/BornData">
         <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/PersonalProfileDocument"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Chapter -->
+    <!-- http://www.ic.ufal.br/lattes/Chapter -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Chapter">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Chapter">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Citations -->
+    <!-- http://www.ic.ufal.br/lattes/Citations -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Citations"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Citations"/>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Course -->
+    <!-- http://www.ic.ufal.br/lattes/Course -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Course"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Course"/>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Courseware -->
+    <!-- http://www.ic.ufal.br/lattes/Courseware -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Courseware">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#TechnicalProduction"/>
-        <owl:disjointWith rdf:resource="http://www.ic.ufal.br/lattes/#ShortCourse"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Courseware">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/TechnicalProduction"/>
+        <owl:disjointWith rdf:resource="http://www.ic.ufal.br/lattes/ShortCourse"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#DoctoralDegree -->
+    <!-- http://www.ic.ufal.br/lattes/DoctoralDegree -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#DoctoralDegree">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#StrictoSensu"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/DoctoralDegree">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/StrictoSensu"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Editing -->
+    <!-- http://www.ic.ufal.br/lattes/Editing -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Editing">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#TechnicalProduction"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Editing">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/TechnicalProduction"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Foreword -->
+    <!-- http://www.ic.ufal.br/lattes/Foreword -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Foreword">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Foreword">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Formation -->
+    <!-- http://www.ic.ufal.br/lattes/Formation -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Formation"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Formation"/>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#FreeTeaching -->
+    <!-- http://www.ic.ufal.br/lattes/FreeTeaching -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#FreeTeaching">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#NonAcademicDegree"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/FreeTeaching">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/NonAcademicDegree"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Graduation -->
+    <!-- http://www.ic.ufal.br/lattes/Graduation -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Graduation">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#AcademicDegree"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Graduation">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/AcademicDegree"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#HighArea -->
+    <!-- http://www.ic.ufal.br/lattes/HighArea -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#HighArea">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#ResearchArea"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/HighArea">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/ResearchArea"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#HighSchool -->
+    <!-- http://www.ic.ufal.br/lattes/HighSchool -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#HighSchool">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#BasicFormation"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/HighSchool">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/BasicFormation"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#IdentityCard -->
+    <!-- http://www.ic.ufal.br/lattes/IdentityCard -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#IdentityCard">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/IdentityCard">
         <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/PersonalProfileDocument"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Improvement -->
+    <!-- http://www.ic.ufal.br/lattes/Improvement -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Improvement">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#LatoSensu"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Improvement">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/LatoSensu"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#IndustrialDesign -->
+    <!-- http://www.ic.ufal.br/lattes/IndustrialDesign -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#IndustrialDesign">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Records"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/IndustrialDesign">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Records"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#IntegratedCircuit -->
+    <!-- http://www.ic.ufal.br/lattes/IntegratedCircuit -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#IntegratedCircuit">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Records"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/IntegratedCircuit">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Records"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#IsiCitations -->
+    <!-- http://www.ic.ufal.br/lattes/IsiCitations -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#IsiCitations">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Citations"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/IsiCitations">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Citations"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#LatoSensu -->
+    <!-- http://www.ic.ufal.br/lattes/LatoSensu -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#LatoSensu">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#UnderGraduation"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/LatoSensu">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Graduation"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Magazine -->
+    <!-- http://www.ic.ufal.br/lattes/Magazine -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Magazine">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Magazine">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#MastersDegree -->
+    <!-- http://www.ic.ufal.br/lattes/MastersDegree -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#MastersDegree">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#StrictoSensu"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/MastersDegree">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/StrictoSensu"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#MedicResidency -->
+    <!-- http://www.ic.ufal.br/lattes/MedicResidency -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#MedicResidency">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#LatoSensu"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/MedicResidency">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/LatoSensu"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Music -->
+    <!-- http://www.ic.ufal.br/lattes/Music -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Music">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Music">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#MusicalScore -->
+    <!-- http://www.ic.ufal.br/lattes/MusicalScore -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#MusicalScore">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/MusicalScore">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#NonAcademicDegree -->
+    <!-- http://www.ic.ufal.br/lattes/NonAcademicDegree -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#NonAcademicDegree">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Formation"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/NonAcademicDegree">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Formation"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#OtherArtisticalOrCulturalProductions -->
+    <!-- http://www.ic.ufal.br/lattes/OtherArtisticalOrCulturalProductions -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#OtherArtisticalOrCulturalProductions">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/OtherArtisticalOrCulturalProductions">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#OtherCitations -->
+    <!-- http://www.ic.ufal.br/lattes/OtherCitations -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#OtherCitations">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Citations"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/OtherCitations">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Citations"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#OtherPublication -->
+    <!-- http://www.ic.ufal.br/lattes/OtherPublication -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#OtherPublication">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/OtherPublication">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#OtherTechnicalPublication -->
+    <!-- http://www.ic.ufal.br/lattes/OtherTechnicalPublication -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#OtherTechnicalPublication">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#TechnicalProduction"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/OtherTechnicalPublication">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/TechnicalProduction"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#PaperPresentation -->
+    <!-- http://www.ic.ufal.br/lattes/PaperPresentation -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#PaperPresentation">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/PaperPresentation">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Passport -->
+    <!-- http://www.ic.ufal.br/lattes/Passport -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Passport">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Passport">
         <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/PersonalProfileDocument"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Patent -->
+    <!-- http://www.ic.ufal.br/lattes/Patent -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Patent"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Patent"/>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#PerformingArts -->
+    <!-- http://www.ic.ufal.br/lattes/PerformingArts -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#PerformingArts">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/PerformingArts">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#PostDoctoral -->
+    <!-- http://www.ic.ufal.br/lattes/PostDoctoral -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#PostDoctoral">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#NonAcademicDegree"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/PostDoctoral">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/NonAcademicDegree"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#ProcessOrTechnique -->
+    <!-- http://www.ic.ufal.br/lattes/ProcessOrTechnique -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#ProcessOrTechnique">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#TechnicalProduction"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/ProcessOrTechnique">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/TechnicalProduction"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Product -->
+    <!-- http://www.ic.ufal.br/lattes/Product -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Product">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#TechnicalProduction"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Product">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/TechnicalProduction"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Production -->
+    <!-- http://www.ic.ufal.br/lattes/Production -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Production"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Production"/>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#ProfessionalAddress -->
+    <!-- http://www.ic.ufal.br/lattes/ProfessionalAddress -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#ProfessionalAddress">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Address"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/ProfessionalAddress">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Address"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#ProfessionalMsc -->
+    <!-- http://www.ic.ufal.br/lattes/ProfessionalMsc -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#ProfessionalMsc">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#MastersDegree"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/ProfessionalMsc">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/MastersDegree"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#ProfessionalTie -->
+    <!-- http://www.ic.ufal.br/lattes/ProfessionalTie -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#ProfessionalTie"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/ProfessionalTie"/>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#PublishedArticle -->
+    <!-- http://www.ic.ufal.br/lattes/PublishedArticle -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#PublishedArticle">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/PublishedArticle">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Article"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Publisher -->
+    <!-- http://www.ic.ufal.br/lattes/Publisher -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Publisher">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Publisher">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Records -->
+    <!-- http://www.ic.ufal.br/lattes/Records -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Records"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Records"/>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#RegisteredSoftware -->
+    <!-- http://www.ic.ufal.br/lattes/RegisteredSoftware -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#RegisteredSoftware">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Records"/>
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Software"/>
-        <owl:disjointWith rdf:resource="http://www.ic.ufal.br/lattes/#UnregisteredSoftware"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/RegisteredSoftware">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Records"/>
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Software"/>
+        <owl:disjointWith rdf:resource="http://www.ic.ufal.br/lattes/UnregisteredSoftware"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#ResearchArea -->
+    <!-- http://www.ic.ufal.br/lattes/ResearchArea -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#ResearchArea"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/ResearchArea"/>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#ResearchReport -->
+    <!-- http://www.ic.ufal.br/lattes/ResearchReport -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#ResearchReport">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#TechnicalProduction"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/ResearchReport">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/TechnicalProduction"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Researcher -->
+    <!-- http://www.ic.ufal.br/lattes/Researcher -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Researcher">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Researcher">
         <owl:equivalentClass rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#ResidentialAddress -->
+    <!-- http://www.ic.ufal.br/lattes/ResidentialAddress -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#ResidentialAddress">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Address"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/ResidentialAddress">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Address"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#School -->
+    <!-- http://www.ic.ufal.br/lattes/School -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#School">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/School">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#ScieloCitations -->
+    <!-- http://www.ic.ufal.br/lattes/ScieloCitations -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#ScieloCitations">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Citations"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/ScieloCitations">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Citations"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#ScopusCitations -->
+    <!-- http://www.ic.ufal.br/lattes/ScopusCitations -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#ScopusCitations">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Citations"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/ScopusCitations">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Citations"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Section -->
+    <!-- http://www.ic.ufal.br/lattes/Section -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Section"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Section"/>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#ShortCourse -->
+    <!-- http://www.ic.ufal.br/lattes/ShortCourse -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#ShortCourse">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#TechnicalProduction"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/ShortCourse">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/TechnicalProduction"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Software -->
+    <!-- http://www.ic.ufal.br/lattes/Software -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Software">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#TechnicalProduction"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Software">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/TechnicalProduction"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Specialization -->
+    <!-- http://www.ic.ufal.br/lattes/Specialization -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Specialization">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#LatoSensu"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Specialization">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/LatoSensu"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#SponsoringInstitution -->
+    <!-- http://www.ic.ufal.br/lattes/SponsoringInstitution -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#SponsoringInstitution">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/SponsoringInstitution">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Organization"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#StrictoSensu -->
+    <!-- http://www.ic.ufal.br/lattes/StrictoSensu -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#StrictoSensu">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#UnderGraduation"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/StrictoSensu">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Graduation"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#SubArea -->
+    <!-- http://www.ic.ufal.br/lattes/SubArea -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#SubArea">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Area"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/SubArea">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Area"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Talk -->
+    <!-- http://www.ic.ufal.br/lattes/Talk -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Talk">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Talk">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#TechnicalCollege -->
+    <!-- http://www.ic.ufal.br/lattes/TechnicalCollege -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#TechnicalCollege">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#AcademicDegree"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/TechnicalCollege">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/AcademicDegree"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#TechnicalProduction -->
+    <!-- http://www.ic.ufal.br/lattes/TechnicalProduction -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#TechnicalProduction">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Production"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/TechnicalProduction">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Production"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#TechnicalWork -->
+    <!-- http://www.ic.ufal.br/lattes/TechnicalWork -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#TechnicalWork">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#TechnicalProduction"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/TechnicalWork">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/TechnicalProduction"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#TechnologicalExtension -->
+    <!-- http://www.ic.ufal.br/lattes/TechnologicalExtension -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#TechnologicalExtension">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#TechnicalProduction"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/TechnologicalExtension">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/TechnicalProduction"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#TradeMark -->
+    <!-- http://www.ic.ufal.br/lattes/TradeMark -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#TradeMark">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Records"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/TradeMark">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Records"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#Translation -->
+    <!-- http://www.ic.ufal.br/lattes/Translation -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#Translation">
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/Translation">
         <rdfs:subClassOf rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#UnderGraduation -->
+    <!-- http://www.ic.ufal.br/lattes/UnderGraduation -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#UnderGraduation">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#AcademicDegree"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/UnderGraduation">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/AcademicDegree"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#UnregisteredSoftware -->
+    <!-- http://www.ic.ufal.br/lattes/UnregisteredSoftware -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#UnregisteredSoftware">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#Software"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/UnregisteredSoftware">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/Software"/>
     </owl:Class>
     
 
 
-    <!-- http://www.ic.ufal.br/lattes/#VisualArts -->
+    <!-- http://www.ic.ufal.br/lattes/VisualArts -->
 
-    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/#VisualArts">
-        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/#ArtisticOrCulturalProduction"/>
+    <owl:Class rdf:about="http://www.ic.ufal.br/lattes/VisualArts">
+        <rdfs:subClassOf rdf:resource="http://www.ic.ufal.br/lattes/ArtisticOrCulturalProduction"/>
     </owl:Class>
     
 
@@ -3160,46 +3169,46 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#BornData"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#IdentityCard"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Passport"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/BornData"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/IdentityCard"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Passport"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#IndustrialDesign"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#IntegratedCircuit"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#TradeMark"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/IndustrialDesign"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/IntegratedCircuit"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/TradeMark"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#IsiCitations"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherCitations"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ScieloCitations"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#ScopusCitations"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/IsiCitations"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherCitations"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ScieloCitations"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/ScopusCitations"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#Music"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#OtherArtisticalOrCulturalProductions"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#PerformingArts"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#VisualArts"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/Music"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/OtherArtisticalOrCulturalProductions"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/PerformingArts"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/VisualArts"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#bookType"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#doctoralType"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#generalType"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#productionType"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#projectType"/>
-            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/#tieType"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/bookType"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/doctoralType"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/generalType"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/productionType"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/projectType"/>
+            <rdf:Description rdf:about="http://www.ic.ufal.br/lattes/tieType"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
